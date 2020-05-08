@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-const LoadMoreButton = () => {
-    return (
-        <div>
-            LoadMoreButton
-        </div>
-    )
-}
+import { StyledLoadMoreBtn } from '../styles/StyledLoadMoreBtn';
+
+const LoadMoreButton = ({ text, callback}) => (
+    <StyledLoadMoreBtn type="button" onClick={callback}>
+        {text}
+    </StyledLoadMoreBtn>
+)
+
 
 export default LoadMoreButton;
