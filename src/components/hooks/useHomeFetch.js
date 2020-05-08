@@ -26,7 +26,7 @@ export const useHomeFetch = searchTerm => {
         }));
       } catch (error) {
         setError(true);
-        console.log(error);
+        console.error(error);
       }
       setLoading(false);
     };

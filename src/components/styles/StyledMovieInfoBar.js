@@ -26,6 +26,13 @@ export const StyledMovieInfoBar = styled.div`
     padding: 10px 20px 0 0;
   }
 
+  .movieinfobar-netflix {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .movieinfobar-info {
     padding: 5px 0 0 10px;
     float: left;
