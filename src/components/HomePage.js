@@ -16,7 +16,7 @@ import { useHomeFetch } from './hooks/useHomeFetch';
 
 import NoImage from './images/no_image.jpg';
 
-const Home = () => {
+const HomePage = () => {
    
     const [{ state, loading, error }, fetchMovies ] = useHomeFetch();
     const [searchTerm, setSearchTerm] = React.useState('');
@@ -79,4 +79,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default HomePage;

@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Components
 import Header from './elements/Header';
-import Home from './Home';
-import MovieInfo from './Movie'
+import HomePage from './HomePage';
+import MoviePage from './MoviePage';
+import ActorPage from './ActorPage';
 
 import { GlobalStyle } from './styles/GlobalStyle';
 
@@ -12,8 +13,9 @@ const App = () => (
     <Router>
         <Header />
         <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/movie/:movieId' component={MovieInfo} />
+            <Route exact path='/' component={HomePage} />
+            <Route exact path='/movie/:movieId' component={MoviePage} />
+            <Route exact path='/actor/:actorId' component={ActorPage} />
         </Switch>
         <GlobalStyle />
     </Router>

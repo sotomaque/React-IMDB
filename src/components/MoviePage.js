@@ -12,11 +12,11 @@ import Spinner from './elements/Spinner';
 // Hooks
 import { useMovieFetch } from './hooks/useMovieFetch';
 
-const Movie = () => {
+const MoviePage = () => {
 
     let { movieId } = useParams();
-    const [movie, loading, error] = useMovieFetch(movieId)
-console.log(movie)
+    const [movie, loading, error] = useMovieFetch(movieId);
+
     if (error) return <div>Something went wrong...</div>;
     if (loading) return <Spinner/> ;
 
@@ -27,8 +27,9 @@ console.log(movie)
             <MovieInfoBar time={movie.runtime} homepage={movie.homepage} budget={movie.budget} revenue={movie.revenue}/>
             <Grid header="Actors">
                 {
-                    movie.actors.map(actor => (
-                        <Actor key={actor.credit_id} actor={actor} />
+                    movie.actors.map((actor, index) => (
+                        index < 10 &&
+                            <Actor key={actor.credit_id} actor={actor} clickable />
                     ))
                 }
             </Grid>
@@ -36,4 +37,4 @@ console.log(movie)
     )
 }
 
-export default Movie;
+export default MoviePage;

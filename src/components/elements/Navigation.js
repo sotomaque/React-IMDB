@@ -8,13 +8,17 @@ import { StyledNavigation } from '../styles/StyledNavigation';
 //  eclipse movie name capping it at 10 chars long
 //
 
-const Navigation = ({ title }) => {
+const Navigation = ({ title, movie, actor }) => {
 
-    const movieName = `${title}` ;
-    const movieNameLength = movieName.length;
     let formattedMovieName = '';
-    movieNameLength > 14 ? formattedMovieName = movieName.substring(0, 14) + '...': formattedMovieName = movieName;
-
+    if (!actor) {
+        const movieName = `${title}` ;
+        const movieNameLength = movieName.length;
+        movieNameLength > 14 ? formattedMovieName = movieName.substring(0, 14) + '...': formattedMovieName = movieName;    
+    } else {
+        formattedMovieName=title;
+    }
+    
 
     return (
         <StyledNavigation>
@@ -23,6 +27,7 @@ const Navigation = ({ title }) => {
                     <p>Home</p>
                 </Link>
                 <p>|</p>
+                { actor && <><p>Actors</p><p>|</p></>}
                 <p style={{opacity: '0.6'}}>{formattedMovieName}</p>
             </div>
         </StyledNavigation>
