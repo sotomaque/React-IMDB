@@ -24,7 +24,6 @@ const MoviesPage = () => {
     const [searchTerm, setSearchTerm] = React.useState('');
    
     if (!movies[0] || !topRatedMovies[0])  return <Spinner /> 
-
     if (error || errorTopRated) return <div>Something went wrong...</div>
     
     const loadMoreMovies = () => {
@@ -61,8 +60,7 @@ const MoviesPage = () => {
                     />
                 )
             }
-           
-            <SearchBar callback={searchMovies} />
+            <SearchBar title="Seach Movies..." callback={searchMovies} />
             <Grid header={searchTerm ? searchTerm : 'Popular Movies'}>
                 {
                     movies.map(movie => (

@@ -57,7 +57,7 @@ const ShowsPage = () => {
                     />
                 )
             }
-            <SearchBar callback={searchShows} />
+            <SearchBar title="Search Shows..." callback={searchShows} />
 
             <Grid header={searchTerm ? searchTerm : 'Popular Shows'}>
             {

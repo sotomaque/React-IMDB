@@ -3,7 +3,7 @@ import FontAwesome from 'react-fontawesome';
 
 import { StyledSearchBar, StyledSearchBarContent } from '../styles/StyledSearchBar';
 
-const SearchBar = ({ callback }) => {
+const SearchBar = ({ title, callback }) => {
 
     const [state, setState] = useState('');
     const timeOut = useRef(null);
@@ -23,7 +23,7 @@ const SearchBar = ({ callback }) => {
         <StyledSearchBar>
             <StyledSearchBarContent>
                 <FontAwesome className="fa-search" name='search' size='2x' />
-                <input type='text' placeholder='Search Movie...' onChange={doSearch} value={state} />
+                <input type='text' placeholder={title} onChange={doSearch} value={state} />
             </StyledSearchBarContent>
         </StyledSearchBar>
     )

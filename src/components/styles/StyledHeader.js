@@ -11,6 +11,8 @@ export const StyledHeader = styled.div`
     padding: 20px 0px;
     margin: 0 auto;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
 
     @media screen and (max-width: 500px) {
       max-width: 1280px;
@@ -29,14 +31,29 @@ export const StyledRMDBLogo = styled.img`
   }
 `;
 
-export const StyledTMDBLogo = styled.img`
-  width: 100px;
-  margin-top: 15px;
-  float: right;
 
-  @media screen and (max-width: 500px) {
-    display: inline-block;
-    width: 60px;
-    margin-top: 0px;
+export const StyledHeaderLinks = styled.ul`
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+
+  li {
+    display: flex;
+    justify-content: flex-end;
   }
-`;
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #111;
+  }
+`
