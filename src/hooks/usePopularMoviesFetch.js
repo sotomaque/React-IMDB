@@ -14,6 +14,7 @@ export const usePopularMoviesFetch = searchTerm => {
   
       try {
         const movieResult = await (await fetch(endpoint)).json();
+        const randomIndex = Math.floor(Math.random() * 20)
 
         setState(prev => ({
           ...prev,
@@ -21,7 +22,7 @@ export const usePopularMoviesFetch = searchTerm => {
             isLoadMore !== -1
               ? [...prev.movies, ...movieResult.results]
               : [...movieResult.results],
-          heroImage: prev.heroImage || movieResult.results[0],
+          heroImage: prev.heroImage || movieResult.results[randomIndex],
           currentPage: movieResult.page,
           totalPages: movieResult.total_pages,
         }));

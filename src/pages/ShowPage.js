@@ -21,7 +21,7 @@ const ShowPage = () => {
     if (loading) return <Spinner/> ;
 
     return (
-        <>
+        <div style={{paddingTop: '60px'}}>
             <NavigationShow title={show.original_name} />
             <ShowInfo movie={show} />
             <MovieInfoBar time={show.runtime} homepage={show.homepage} budget={show.budget} revenue={show.revenue}/>
@@ -33,7 +33,7 @@ const ShowPage = () => {
                     ))
                 }
             </Grid>
-        </>
+        </div>
     )
 }
 

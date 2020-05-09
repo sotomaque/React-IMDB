@@ -47,7 +47,7 @@ const ShowsPage = () => {
     const heroImageText = heroImageShow.overview;
 
     return (
-        <>
+        <div style={{paddingTop: '60px'}}>
             {
                 !searchTerm && (
                     <HeroImage 
@@ -108,7 +108,7 @@ const ShowsPage = () => {
             {
                 loadingTopRated && <Spinner/>
             }
-        </>
+        </div>
     )
 }
 

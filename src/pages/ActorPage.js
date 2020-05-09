@@ -21,7 +21,7 @@ const ActorPage = () => {
     if (loading) return <Spinner/> ;
 
     return (
-        <>
+        <div style={{paddingTop: '60px'}}>
             <Navigation actor title={actor.name} />
             <ActorInfo actor={actor} />
             <Grid header="Known For">
@@ -32,7 +32,7 @@ const ActorPage = () => {
                     ))
                 }
             </Grid>
-        </>
+        </div>
     )
 }
 

@@ -27,8 +27,8 @@ const MoviePage = () => {
     if (loading) return <Spinner/> ;
 
     return (
-        <>
-            <NavigationMovie title={movie.title} />
+        <div style={{paddingTop: '60px'}}>
+            <NavigationMovie title={movie.original_title} />
             <MovieInfo movie={movie} />
             <MovieInfoBar time={movie.runtime} homepage={movie.homepage} budget={movie.budget} revenue={movie.revenue}/>
             <Grid header="Actors">
@@ -56,7 +56,7 @@ const MoviePage = () => {
                     ))
                 }
             </Grid>
-        </>
+        </div>
     )
 }
 

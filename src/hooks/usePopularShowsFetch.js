@@ -14,14 +14,14 @@ export const usePopularShowsFetch = searchTerm => {
   
       try {
         const showResult = await (await fetch(endpoint)).json();
-
+        const randomIndex = Math.floor(Math.random() * 20)
         setState(prev => ({
           ...prev,
           shows:
             isLoadMore !== -1
               ? [...prev.shows, ...showResult.results]
               : [...showResult.results],
-          heroImageShow: prev.heroImageShow || showResult.results[0],
+          heroImageShow: prev.heroImageShow || showResult.results[randomIndex],
           currentPageShow: showResult.page,
           totalPagesShow: showResult.total_pages,
         }));
