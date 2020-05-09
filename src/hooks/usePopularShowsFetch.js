@@ -13,17 +13,17 @@ export const usePopularShowsFetch = searchTerm => {
       const isLoadMore = endpoint.search('page');
   
       try {
-        const showsResult = await (await fetch(endpoint)).json();
+        const showResult = await (await fetch(endpoint)).json();
 
         setState(prev => ({
           ...prev,
           shows:
             isLoadMore !== -1
-              ? [...prev.shows, ...showsResult.results]
-              : [...showsResult.results],
-          heroImageShow: prev.heroImageShow || showsResult.results[0],
-          currentPage: showsResult.page,
-          totalPages: showsResult.total_pages,
+              ? [...prev.shows, ...showResult.results]
+              : [...showResult.results],
+          heroImageShow: prev.heroImageShow || showResult.results[0],
+          currentPageShow: showResult.page,
+          totalPagesShow: showResult.total_pages,
         }));
 
       } catch (error) {

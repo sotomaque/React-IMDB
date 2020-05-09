@@ -25,7 +25,7 @@ const MoviesPage = () => {
    
     if (!movies[0] || !topRatedMovies[0])  return <Spinner /> 
 
-    if (error) return <div>Something went wrong...</div>
+    if (error || errorTopRated) return <div>Something went wrong...</div>
     
     const loadMoreMovies = () => {
         const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage + 1}`;
@@ -81,14 +81,14 @@ const MoviesPage = () => {
             {
                 loading && <Spinner/>
             }
-            { currentPage < totalPages && !loading && (
+            { currentPage < totalPages && !loading && 
                 <LoadMoreButton text="Load More" callback={loadMoreMovies} />
-            )}
+            }
+            <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
+
             {
                 !searchTerm && (
-                    <>
-                    <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
-                    <Grid header={searchTerm ? searchTerm : 'Top Rated Movies'}>
+                    <Grid header={'Top Rated Movies'}>
                         {
                             topRatedMovies.map(movie => (
                                 <MovieThumb 
@@ -103,7 +103,6 @@ const MoviesPage = () => {
                             ))
                         }
                     </Grid>
-                    </>
                 )
             }
             { currentPageTopRated < totalPagesTopRated && !loadingTopRated && !searchTerm && 

@@ -22,12 +22,15 @@ const NavigationMovie = ({ title }) => {
                 <Link to='/'>
                     <p>Home</p>
                 </Link>
+
                 <p style={{opacity: '0.6'}}>|</p>
-                <Link to='/movie'>
+
+                <Link to='/movies'>
                     <p>Movies</p>
                 </Link>
                 
                 <p style={{opacity: '0.6'}}>|</p>
+                
                 <p style={{opacity: '0.6'}}>{formattedMovieName}</p>
             </div>
         </StyledNavigation>

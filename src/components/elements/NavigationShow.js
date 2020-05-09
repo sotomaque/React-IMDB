@@ -22,9 +22,15 @@ const NavigationShow = ({ title }) => {
                 <Link to='/'>
                     <p>Home</p>
                 </Link>
+
                 <p style={{opacity: '0.6'}}>|</p>
-                <p>Shows</p>
+
+                <Link to='/shows'>
+                    <p>Shows</p>
+                </Link>
+
                 <p style={{opacity: '0.6'}}>|</p>
+
                 <p style={{opacity: '0.6'}}>{formattedShowName}</p>
             </div>
         </StyledNavigation>

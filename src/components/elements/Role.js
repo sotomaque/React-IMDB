@@ -10,7 +10,7 @@ const Role = ({ title, character, role, clickable }) =>  {
     return (
         <StyledRole>
             {clickable ? (
-                <Link to={`/movie/${role.id}`}>
+                <Link to={`/movies/${role.id}`}>
                     <img 
                     src={role.poster_path
                         ? `${IMAGE_BASE_URL}${POSTER_SIZE}${role.poster_path}` 

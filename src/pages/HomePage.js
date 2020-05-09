@@ -92,7 +92,7 @@ const HomePage = () => {
                 }
             </Grid>
             {
-                loading && <Spinner/>
+                loadingShow && <Spinner/>
             }
             { !loadingShow && (
                 <LoadMoreButton text="Load More" callback={loadMoreShows} />
