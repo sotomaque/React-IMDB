@@ -20,8 +20,6 @@ const ActorPage = () => {
     if (error) return <div>Something went wrong...</div>;
     if (loading) return <Spinner/> ;
 
-    console.log(actor)
-
     return (
         <>
             <Navigation actor title={actor.name} />

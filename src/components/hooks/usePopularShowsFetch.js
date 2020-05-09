@@ -33,8 +33,6 @@ export const usePopularShowsFetch = searchTerm => {
       setLoading(false);
     };
 
-    console.log('shows state', state)
-
     useEffect(() => {
         fetchPopularShows(`${API_URL}tv/popular?api_key=${API_KEY}`)
     }, []);

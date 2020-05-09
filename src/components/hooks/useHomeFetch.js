@@ -39,8 +39,6 @@ export const useHomeFetch = searchTerm => {
       setLoading(false);
     };
 
-    console.log(state)
-
 
     useEffect(() => {
         fetchMovies(`${API_URL}movie/popular?api_key=${API_KEY}`)

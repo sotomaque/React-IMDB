@@ -33,9 +33,6 @@ export const usePopularMoviesFetch = searchTerm => {
       setLoading(false);
     };
 
-    console.log('moveis state', state)
-
-
     useEffect(() => {
         fetchPopularMovies(`${API_URL}movie/popular?api_key=${API_KEY}`)
     }, []);

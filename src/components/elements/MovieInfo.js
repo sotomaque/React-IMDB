@@ -8,7 +8,6 @@ import MovieThumb from './MovieThumb';
 import { StyledMovieInfo } from '../styles/StyledMovieInfo';
 
 const MovieInfo = ({ movie }) => {
-    console.log(movie)
     return (
         <StyledMovieInfo backdrop={movie.backdrop_path}>
         <div className="movieinfo-content">

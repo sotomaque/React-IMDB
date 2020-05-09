@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import { API_URL, API_KEY } from '../../config';
 
-export const useTopRatedMoviesFetch = searchTerm => {
-    const [state, setState] = useState({ topRatedMovies: [] });
+export const useSimilarMoviesFetch = (movie_id) => {
+    const [state, setState] = useState({ simliarMovies: [] });
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
   
-    const fetchTopRatedMovies = async endpoint => {
+    const fetchSimilarMovies = async (movieId) => {
       setError(false);
       setLoading(true);
-  
+      
+      const endpoint = `${API_URL}movie/${movie_id}/similar?api_key=${API_KEY}`;
       const isLoadMore = endpoint.search('page');
   
       try {
@@ -17,13 +18,12 @@ export const useTopRatedMoviesFetch = searchTerm => {
 
         setState(prev => ({
           ...prev,
-          topRatedMovies:
+          simliarMovies:
             isLoadMore !== -1
-              ? [...prev.topRatedMovies, ...movieResult.results]
+              ? [...prev.simliarMovies, ...movieResult.results]
               : [...movieResult.results],
-          heroImageTopRated: prev.heroImageTopRated || movieResult.results[0],
-          currentPageTopRated: movieResult.page,
-          totalPagesTopRated: movieResult.total_pages,
+          currentPageSimilar: movieResult.page,
+          totalPagesSimilar: movieResult.total_pages,
         }));
 
       } catch (error) {
@@ -33,10 +33,12 @@ export const useTopRatedMoviesFetch = searchTerm => {
       setLoading(false);
     };
 
+    
+
 
     useEffect(() => {
-        fetchTopRatedMovies(`${API_URL}movie/top_rated?api_key=${API_KEY}`)
+        fetchSimilarMovies(`${API_URL}movie/${movie_id}/similar?api_key=${API_KEY}`)
     }, []);
 
-    return [{ state, loading, error }, fetchTopRatedMovies]
+    return [{ state, loading, error }, fetchSimilarMovies]
 }

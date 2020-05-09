@@ -5,7 +5,6 @@ import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE, SEARCH_BASE_URL, POPULAR_BA
 
 // Components
 import HeroImage from './elements/HeroImage';
-import SearchBar from './elements/SearchBar';
 import Grid from './elements/Grid';
 import MovieThumb from './elements/MovieThumb';
 import LoadMoreButton from './elements/LoadMoreButton';
@@ -21,34 +20,22 @@ import ShowThumb from './elements/ShowThumb';
 const HomePage = () => {
    
     const [{ state: { movies, heroImage, currentPage, totalPages }, loading, error }, fetchPopularMovies ] = usePopularMoviesFetch();
-    const [searchTerm, setSearchTerm] = React.useState('');
-
     const [{ state: { shows, heroImageShow, currentPageShow, totalPagesShow }, loadingShow, errorShow }, fetchPopularShows ] = usePopularShowsFetch();
 
     const randomIndex = Math.round(Math.random())
-    console.log(randomIndex)
    
     if (!movies[0] || !shows[0])  return <Spinner /> 
 
     if (error) return <div>Something went wrong...</div>
     
     const loadMoreMovies = () => {
-        const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage + 1}`;
         const popularEndpoint = `${POPULAR_BASE_URL_MOVIES}&page=${currentPage + 1}`;
-
-        const endpoint = searchTerm ? searchEndpoint : popularEndpoint;
-        fetchPopularMovies(endpoint);
+        fetchPopularMovies(popularEndpoint);
     }
 
     const loadMoreShows = () => {
         const endpoint = `${POPULAR_BASE_URL_SHOWS}&page=${currentPage + 1}`;
         fetchPopularShows(endpoint);
-    }
-
-    const searchMovies = search => {
-        const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL_MOVIES;
-        setSearchTerm(search);
-        fetchPopularMovies(endpoint);
     }
 
     const heroImageURL = randomIndex === 0 ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImage.backdrop_path}` : `${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImageShow.backdrop_path}`;
@@ -57,18 +44,15 @@ const HomePage = () => {
 
     return (
         <>
-            {
-                !searchTerm && (
-                    <HeroImage 
-                        image={heroImageURL}
-                        title={heroImageTitle}
-                        text={heroImageText}
-                    />
-                )
-            }
+            
+            <HeroImage 
+                image={heroImageURL}
+                title={heroImageTitle}
+                text={heroImageText}
+            />
+              
            
-            <SearchBar callback={searchMovies} />
-            <Grid header={searchTerm ? searchTerm : 'Popular Movies'}>
+            <Grid header='Popular Movies'>
                 {
                     movies.map(movie => (
                         <MovieThumb 
@@ -92,7 +76,7 @@ const HomePage = () => {
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
 
             {/** SHOWS  **/}
-            <Grid header={searchTerm ? searchTerm : 'Popular Shows'}>
+            <Grid header='Popular Shows'>
                 {
                     shows.map(show => (
                         <ShowThumb 

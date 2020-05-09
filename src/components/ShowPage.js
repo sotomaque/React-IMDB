@@ -20,8 +20,6 @@ const ShowPage = () => {
     if (error) return <div>Something went wrong...</div>;
     if (loading) return <Spinner/> ;
 
-    console.log(show)
-
     return (
         <>
             <NavigationShow title={show.original_name} />
