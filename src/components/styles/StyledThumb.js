@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledMovieThumb = styled.div`
+export const StyledThumb = styled.div`
   img {
     width: 100%;
     height: auto;

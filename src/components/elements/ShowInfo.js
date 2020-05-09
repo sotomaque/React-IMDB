@@ -7,10 +7,8 @@ import MovieThumb from './MovieThumb';
 
 import { StyledMovieInfo } from '../styles/StyledMovieInfo';
 
-const MovieInfo = ({ movie }) => {
-    console.log(movie)
-    return (
-        <StyledMovieInfo backdrop={movie.backdrop_path}>
+const ShowInfo = ({ movie }) => (
+    <StyledMovieInfo backdrop={movie.backdrop_path}>
         <div className="movieinfo-content">
 
             <div className="movieinfo-thumb">
@@ -34,33 +32,14 @@ const MovieInfo = ({ movie }) => {
                         <h3>IMDB RATING</h3>
                         <div className="score">{movie.vote_average}</div>
                     </div>
-
-                    <div className="director">
-                        <h3>DIRECTOR{movie.directors.length > 1 ? 'S' : ''}</h3>
-                        {
-                            movie.directors.map(director => (
-                                <p key={director.credit_id}>{director.name}</p>
-                            ))
-                        }
-                    </div>
-
-                    <div className="genres">
-                        <h3>GENRE{movie.genres.length > 1 ? 'S' : ''}</h3>
-                        {
-                            movie.genres.map(genres => (
-                                <p key={genres.id}>{genres.name}</p>
-                            ))
-                        }
-                    </div>
+                   
                 </div>
-
-                
             </div>
 
         </div>
         
     </StyledMovieInfo>
-    )
-}
+)
 
-export default MovieInfo;
+
+export default ShowInfo;

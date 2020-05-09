@@ -79,7 +79,15 @@ export const StyledMovieInfo = styled.div`
   }
 
   .director {
-    margin: 0 0 0 40px;
+    margin: 0 40px 0 40px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .genre {
+    margin: 0 40px 0 40px;
 
     p {
       margin: 0;

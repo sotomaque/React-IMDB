@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { StyledMovieThumb } from '../styles/StyledMovieThumb';
+import { StyledThumb } from '../styles/StyledThumb';
 
 const MovieThumb = ({ image, movieId, clickable }) => (
-  <StyledMovieThumb>
+  <StyledThumb>
     {clickable ? (
       <Link to={`/movie/${movieId}`}>
         <img className="clickable" src={image} alt="moviethumb" />
@@ -12,7 +12,7 @@ const MovieThumb = ({ image, movieId, clickable }) => (
     ) : (
       <img src={image} alt="moviethumb" />
     )}
-  </StyledMovieThumb>
+  </StyledThumb>
 )
 
 export default MovieThumb;

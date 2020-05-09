@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 // Components
-import NavigationMovie from './elements/NavigationMovie';
-import MovieInfo from './elements/MovieInfo'
+import NavigationShow from './elements/NavigationShow';
+import ShowInfo from './elements/ShowInfo'
 import MovieInfoBar from './elements/MovieInfoBar'
 import Actor from './elements/Actor'
 
@@ -10,24 +10,26 @@ import Grid from './elements/Grid';
 import Spinner from './elements/Spinner';
 
 // Hooks
-import { useMovieFetch } from './hooks/useMovieFetch';
+import { useShowFetch } from './hooks/useShowFetch';
 
-const MoviePage = () => {
+const ShowPage = () => {
 
-    let { movieId } = useParams();
-    const [movie, loading, error] = useMovieFetch(movieId);
+    let { showId } = useParams();
+    const [show, loading, error] = useShowFetch(showId);
 
     if (error) return <div>Something went wrong...</div>;
     if (loading) return <Spinner/> ;
 
+    console.log(show)
+
     return (
         <>
-            <NavigationMovie title={movie.title} />
-            <MovieInfo movie={movie} />
-            <MovieInfoBar time={movie.runtime} homepage={movie.homepage} budget={movie.budget} revenue={movie.revenue}/>
+            <NavigationShow title={show.original_name} />
+            <ShowInfo movie={show} />
+            <MovieInfoBar time={show.runtime} homepage={show.homepage} budget={show.budget} revenue={show.revenue}/>
             <Grid header="Actors">
                 {
-                    movie.actors.map((actor, index) => (
+                    show.actors.map((actor, index) => (
                         index < 10 &&
                             <Actor key={actor.credit_id} actor={actor} clickable />
                     ))
@@ -37,4 +39,4 @@ const MoviePage = () => {
     )
 }
 
-export default MoviePage;
+export default ShowPage;
