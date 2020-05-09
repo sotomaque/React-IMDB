@@ -1,16 +1,16 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
-// Components
-import Navigation from './elements/Navigation';
-import ActorInfo from './elements/ActorInfo'
-import Role from './elements/Role'
-import MovieInfoBar from './elements/MovieInfoBar'
 
-import Grid from './elements/Grid';
-import Spinner from './elements/Spinner';
+// Components
+import Navigation from '../components/elements/Navigation';
+import ActorInfo from '../components/elements/ActorInfo'
+import Role from '../components/elements/Role'
+
+import Grid from '../components/elements/Grid';
+import Spinner from '../components/elements/Spinner';
 
 // Hooks
-import { useActorFetch } from './hooks/useActorFetch';
+import { useActorFetch } from '../hooks/useActorFetch';
 
 const ActorPage = () => {
 

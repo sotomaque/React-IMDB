@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Components
-import Header from './elements/Header';
-import HomePage from './HomePage';
-import MoviePage from './MoviePage';
-import MoviesPage from './MoviesPage';
-import ShowPage from './ShowPage';
-import ActorPage from './ActorPage';
+import Header from './components/elements/Header';
+import HomePage from './pages/HomePage';
+import MoviePage from './pages/MoviePage';
+import MoviesPage from './pages/MoviesPage';
+import ShowPage from './pages/ShowPage';
+import ActorPage from './pages/ActorPage';
 
-import { GlobalStyle } from './styles/GlobalStyle';
+import { GlobalStyle } from './components/styles/GlobalStyle';
 
 const App = () => (
     <Router>

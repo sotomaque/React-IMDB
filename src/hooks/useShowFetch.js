@@ -1,5 +1,5 @@
 import { useEffect, useCallback, useState } from 'react';
-import { API_URL, API_KEY } from '../../config';
+import { API_URL, API_KEY } from '../config';
 
 export const useShowFetch = (showId) => {
     const [state, setState] = useState({})

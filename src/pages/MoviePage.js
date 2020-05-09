@@ -1,21 +1,21 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
-import NoImage from './images/no_image.jpg';
+import NoImage from '../images/no_image.jpg';
 
 // Components
-import NavigationMovie from './elements/NavigationMovie';
-import MovieInfo from './elements/MovieInfo'
-import MovieInfoBar from './elements/MovieInfoBar'
-import Actor from './elements/Actor'
+import NavigationMovie from '../components/elements/NavigationMovie';
+import MovieInfo from '../components/elements/MovieInfo'
+import MovieInfoBar from '../components/elements/MovieInfoBar'
+import Actor from '../components/elements/Actor'
 
-import Grid from './elements/Grid';
-import Spinner from './elements/Spinner';
+import Grid from '../components/elements/Grid';
+import Spinner from '../components/elements/Spinner';
 
 // Hooks
-import { useMovieFetch } from './hooks/useMovieFetch';
-import { useSimilarMoviesFetch } from './hooks/useSimilarMoviesFetch';
-import MovieThumb from './elements/MovieThumb';
+import { useMovieFetch } from '../hooks/useMovieFetch';
+import { useSimilarMoviesFetch } from '../hooks/useSimilarMoviesFetch';
+import MovieThumb from '../components/elements/MovieThumb';
 
 const MoviePage = () => {
 

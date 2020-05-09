@@ -4,18 +4,18 @@ import React from 'react';
 import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE, SEARCH_BASE_URL, POPULAR_BASE_URL_MOVIES, POPULAR_BASE_URL_SHOWS } from '../config';
 
 // Components
-import HeroImage from './elements/HeroImage';
-import Grid from './elements/Grid';
-import MovieThumb from './elements/MovieThumb';
-import LoadMoreButton from './elements/LoadMoreButton';
-import Spinner from './elements/Spinner';
+import HeroImage from '../components/elements/HeroImage';
+import Grid from '../components/elements/Grid';
+import MovieThumb from '../components/elements/MovieThumb';
+import LoadMoreButton from '../components/elements/LoadMoreButton';
+import Spinner from '../components/elements/Spinner';
 
 // Hooks
-import { usePopularMoviesFetch } from './hooks/usePopularMoviesFetch';
-import { usePopularShowsFetch } from './hooks/usePopularShowsFetch';
+import { usePopularMoviesFetch } from '../hooks/usePopularMoviesFetch';
+import { usePopularShowsFetch } from '../hooks/usePopularShowsFetch';
 
-import NoImage from './images/no_image.jpg';
-import ShowThumb from './elements/ShowThumb';
+import NoImage from '../images/no_image.jpg';
+import ShowThumb from '../components/elements/ShowThumb';
 
 const HomePage = () => {
    

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import NoImage from '../images/no_image.jpg';
+import NoImage from '../../images/no_image.jpg';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 
 import { StyledRole } from '../styles/StyledRole';

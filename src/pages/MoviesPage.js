@@ -4,18 +4,18 @@ import React from 'react';
 import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE, SEARCH_BASE_URL, POPULAR_BASE_URL_MOVIES, TOP_RATED_BASE_URL_MOVIES } from '../config';
 
 // Components
-import HeroImage from './elements/HeroImage';
-import SearchBar from './elements/SearchBar';
-import Grid from './elements/Grid';
-import MovieThumb from './elements/MovieThumb';
-import LoadMoreButton from './elements/LoadMoreButton';
-import Spinner from './elements/Spinner';
+import HeroImage from '../components/elements/HeroImage';
+import SearchBar from '../components/elements/SearchBar';
+import Grid from '../components/elements/Grid';
+import MovieThumb from '../components/elements/MovieThumb';
+import LoadMoreButton from '../components/elements/LoadMoreButton';
+import Spinner from '../components/elements/Spinner';
 
 // Hooks
-import { usePopularMoviesFetch } from './hooks/usePopularMoviesFetch';
-import { useTopRatedMoviesFetch } from './hooks/useTopRatedMoviesFetch';
+import { usePopularMoviesFetch } from '../hooks/usePopularMoviesFetch';
+import { useTopRatedMoviesFetch } from '../hooks/useTopRatedMoviesFetch';
 
-import NoImage from './images/no_image.jpg';
+import NoImage from '../images/no_image.jpg';
 
 const MoviesPage = () => {
    

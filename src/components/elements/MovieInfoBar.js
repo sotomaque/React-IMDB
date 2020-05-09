@@ -1,7 +1,7 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 
-import Netflix from '../images/netflix.png'
+import Netflix from '../../images/netflix.png'
 
 import { calcTime, convertMoney } from '../../helpers';
 

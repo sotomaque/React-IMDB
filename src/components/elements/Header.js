@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import { StyledHeader, StyledRMDBLogo, StyledTMDBLogo } from '../styles/StyledHeader';
 
 // images
-import RMDBLogo from '../images/reactMovie_logo.png';
-import TMDBLogo from '../images/tmdb_logo.svg';
+import RMDBLogo from '../../images/reactMovie_logo.png';
+import TMDBLogo from '../../images/tmdb_logo.svg';
 
 const Header = () => (
     <StyledHeader>
