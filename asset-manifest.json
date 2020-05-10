@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/React-IMDB/static/js/main.6fc5da9d.chunk.js",
+    "main.js.map": "/React-IMDB/static/js/main.6fc5da9d.chunk.js.map",
+    "runtime-main.js": "/React-IMDB/static/js/runtime-main.712a69aa.js",
+    "runtime-main.js.map": "/React-IMDB/static/js/runtime-main.712a69aa.js.map",
+    "static/js/2.f5715ffd.chunk.js": "/React-IMDB/static/js/2.f5715ffd.chunk.js",
+    "static/js/2.f5715ffd.chunk.js.map": "/React-IMDB/static/js/2.f5715ffd.chunk.js.map",
+    "index.html": "/React-IMDB/index.html",
+    "precache-manifest.67775dbb8f76819131509ca4396fec0f.js": "/React-IMDB/precache-manifest.67775dbb8f76819131509ca4396fec0f.js",
+    "service-worker.js": "/React-IMDB/service-worker.js",
+    "static/js/2.f5715ffd.chunk.js.LICENSE.txt": "/React-IMDB/static/js/2.f5715ffd.chunk.js.LICENSE.txt",
+    "static/media/netflix.png": "/React-IMDB/static/media/netflix.d9247b29.png",
+    "static/media/no_image.jpg": "/React-IMDB/static/media/no_image.31f5bb1d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.712a69aa.js",
+    "static/js/2.f5715ffd.chunk.js",
+    "static/js/main.6fc5da9d.chunk.js"
+  ]
+}
