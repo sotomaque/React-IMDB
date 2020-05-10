@@ -24,8 +24,6 @@ const ShowPage = () => {
     let { showId } = useParams();
     const [show, loading, error] = useShowFetch(showId);
 
-    console.log(show);
-
     if (error) return <div>Something went wrong...</div>;
     if (loading) return <Spinner/> ;
 

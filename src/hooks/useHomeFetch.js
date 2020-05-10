@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import { API_URL, API_KEY } from '../config';
 
+import { useHistory } from 'react-router-dom';
+
 export const useHomeFetch = searchTerm => {
+    const history = useHistory();
+    
     const [state, setState] = useState({ movies: [], shows: [] });
     const [shows, setShows] = useState({});
     const [loading, setLoading] = useState(true);
@@ -16,8 +20,17 @@ export const useHomeFetch = searchTerm => {
       try {
         const movieEndpoint = `${API_URL}movie/popular?api_key=${API_KEY}`;
         const showEndpoint = `${API_URL}tv/popular?api_key=${API_KEY}`;
-        const movieResult = await (await fetch(movieEndpoint)).json();
-        const showResult = await (await fetch(showEndpoint)).json();
+        const movieResponse = await fetch(movieEndpoint);
+        if (movieResponse.status === 404) {
+          history.push('/React-IMDB/404');
+        }
+        const movieResult = await movieResponse.json();
+
+        const showResponse = await fetch(showEndpoint);
+        if (showResponse.status === 404) {
+          history.push('/React-IMDB/404');
+        }
+        const showResult = await showResponse.json();
 
         setState(prev => ({
           ...prev,

@@ -36,9 +36,9 @@ const App = () => (
 
             <Route exact path='/actors/:actorId' component={ActorPage} />
 
-            <Route path="/React-IMDB/404" component={NotFoundPage} />
-            
+            <Route exact path="/React-IMDB/404" component={NotFoundPage} />
             <Redirect to="/React-IMDB/404" />
+            <Route path="*" component={NotFoundPage} />
  
         </Switch>
         <GlobalStyle />

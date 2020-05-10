@@ -15,7 +15,6 @@ import { useMovieByGenreFetch } from '../hooks/useMovieByGenreFetch';
 import MovieThumb from '../components/elements/MovieThumb';
 
 const GenrePage = () => {
-
     let { genreId, genreName } = useParams();
     const [{ state: { movies, heroImage, currentPage, totalPages }, loading, error }, fetchMoviesByGenre ] = useMovieByGenreFetch(genreId);
 
