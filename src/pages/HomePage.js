@@ -102,7 +102,6 @@ const HomePage = () => {
                 <LoadMoreButton text="Load More" callback={loadMoreShows} />
             )}
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
-
         </div>
     )
 }

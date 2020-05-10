@@ -25,6 +25,14 @@ const ActorInfo = ({ actor }) => (
                 <h3>Biography</h3>
                 <p>{actor.biography}</p>
 
+                <div className="rating-director">
+                <div>
+                  <h3>POPULARITY</h3>
+                  <div className="score">{Math.round(actor.popularity * 10) / 10}</div>
+                </div>
+    
+              </div>
+
             </div>
         </div>
     </StyledActorInfo>

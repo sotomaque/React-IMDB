@@ -65,6 +65,7 @@ const ShowSeasonPage = () => {
                     ))
                 }
             </Grid>
+            <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
         </div>
     )
 }

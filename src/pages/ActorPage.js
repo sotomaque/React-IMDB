@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 
 // Components
 import Navigation from '../components/elements/Navigation';
-import ActorInfo from '../components/elements/ActorInfo'
+import ActorInfo from '../components/elements/ActorInfo';
+import ActorInfoBar from '../components/elements/ActorInfoBar';
 import Role from '../components/elements/Role'
 
 import Grid from '../components/elements/Grid';
@@ -24,6 +25,7 @@ const ActorPage = () => {
         <div style={{paddingTop: '60px'}}>
             <Navigation actor title={actor.name} />
             <ActorInfo actor={actor} />
+            <ActorInfoBar birthday={actor.birthday} knownFor={actor.known_for_department} placeOfBirth={actor.place_of_birth}/>
             <Grid header="Known For">
                 {
                     actor.roles.map((role, index) => (
@@ -32,6 +34,8 @@ const ActorPage = () => {
                     ))
                 }
             </Grid>
+            <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
+
         </div>
     )
 }

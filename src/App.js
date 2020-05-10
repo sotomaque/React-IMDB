@@ -34,7 +34,7 @@ const App = () => (
             <Route exact path='/React-IMDB/shows/:showId' component={ShowPage} />
             <Route exact path='/React-IMDB/shows/:showId/season/:seasonNumber' component={ShowSeasonPage} />
 
-            <Route exact path='/React-IMDB/actors/:actorId' component={ActorPage} />
+            <Route exact path='/React-IMDB/people/:actorId' component={ActorPage} />
 
             <Route exact path="/React-IMDB/404" component={NotFoundPage} />
             <Redirect to="/React-IMDB/404" />

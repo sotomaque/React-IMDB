@@ -27,7 +27,7 @@ const Navigation = ({ title, movie, actor }) => {
                     <p>Home</p>
                 </Link>
                 <p>|</p>
-                { actor && <><p>Actors</p><p>|</p></>}
+                { actor && <><p>People</p><p>|</p></>}
                 <p style={{opacity: '0.6'}}>{formattedMovieName}</p>
             </div>
         </StyledNavigation>

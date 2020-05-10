@@ -6,28 +6,28 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 
 import { StyledActor } from '../styles/StyledActor';
 
-const Actor = ({ actor, clickable }) =>  (
+const CrewMember = ({ member, clickable }) =>  (
     <StyledActor>
         {clickable ? (
-            <Link to={`/React-IMDB/people/${actor.id}`}>
+            <Link to={`/React-IMDB/people/${member.id}`}>
                 <img 
-                src={actor.profile_path 
-                    ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}` 
+                src={member.profile_path 
+                    ? `${IMAGE_BASE_URL}${POSTER_SIZE}${member.profile_path}` 
                     : NoImage } alt="actor-thumb" 
                 />
             </Link>
         ) : (
             <img 
-            src={actor.profile_path 
-                ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}` 
+            src={member.profile_path 
+                ? `${IMAGE_BASE_URL}${POSTER_SIZE}${member.profile_path}` 
                 : NoImage } alt="actor-thumb" 
             />
         )}
   
-        <span className="actor-name">{actor.name}</span>
-        <span className="actor-character">{actor.character}</span>
+        <span className="actor-name">{member.name}</span>
+        <span className="actor-character">{member.job}</span>
     </StyledActor>
 )
 
 
-export default Actor;
+export default CrewMember;

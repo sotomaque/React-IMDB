@@ -110,6 +110,7 @@ const MoviesPage = () => {
             {
                 loadingTopRated && <Spinner/>
             }
+            <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
         </div>
     )
 }
