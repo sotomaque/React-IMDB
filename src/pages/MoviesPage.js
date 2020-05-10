@@ -22,8 +22,6 @@ const MoviesPage = () => {
     const [{ state: { movies, heroImage, currentPage, totalPages }, loading, error }, fetchPopularMovies ] = usePopularMoviesFetch();
     const [{ state: { topRatedMovies, heroImageTopRated, currentPageTopRated, totalPagesTopRated }, loadingTopRated, errorTopRated }, fetchTopRatedMovies ] = useTopRatedMoviesFetch();
     const [searchTerm, setSearchTerm] = React.useState('');
-
-    
    
     if (!movies[0] || !topRatedMovies[0])  return <Spinner /> 
     if (error || errorTopRated) return <div>Something went wrong...</div>

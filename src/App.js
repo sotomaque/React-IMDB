@@ -12,6 +12,8 @@ import ShowsPage from './pages/ShowsPage';
 import ShowPage from './pages/ShowPage';
 import ShowSeasonPage from './pages/ShowSeasonPage';
 
+import GenrePage from './pages/GenrePage';
+
 import ActorPage from './pages/ActorPage';
 
 import NotFoundPage from './pages/NotFoundPage';
@@ -25,6 +27,8 @@ const App = () => (
             <Route exact path='/' component={HomePage} />
             <Route exact path='/movies/:movieId' component={MoviePage} />
             <Route exact path='/movies' component={MoviesPage} />
+
+            <Route exact path='/genre/:genreName/:genreId' component={GenrePage} />
 
             <Route exact path='/shows' component={ShowsPage} />
             <Route exact path='/shows/:showId' component={ShowPage} />

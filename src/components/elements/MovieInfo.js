@@ -1,4 +1,6 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
+
 import { Chip } from "@material-ui/core";
 import NoImage from "../../images/no_image.jpg";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
@@ -8,6 +10,9 @@ import MovieThumb from "./MovieThumb";
 import { StyledMovieInfo } from "../styles/StyledMovieInfo";
 
 const MovieInfo = ({ movie }) => {
+
+  const history = useHistory();
+
   return (
     <StyledMovieInfo backdrop={movie.backdrop_path}>
       <div className="movieinfo-content">
@@ -42,13 +47,14 @@ const MovieInfo = ({ movie }) => {
 
             <div className="genres">
               <h3>GENRE{movie.genres.length > 1 ? "S" : ""}</h3>
-              {movie.genres.map((genres) => (
+              {movie.genres.map((genre) => (
                 <Chip
                   color="default"
-                  key={genres.id}
-                  label={genres.name}
+                  key={genre.id}
+                  label={genre.name}
                   clickable
                   style={{ margin: "5px" }}
+                  onClick={() => history.push(`/genre/${genre.name}/${genre.id}`)}
                 />
               ))}
             </div>
