@@ -25,16 +25,16 @@ const App = () => (
         <Header />
         <Switch>
             <Route exact path='/React-IMDB' component={HomePage} />
-            <Route exact path='/movies/:movieId' component={MoviePage} />
-            <Route exact path='/movies' component={MoviesPage} />
+            <Route exact path='/React-IMDB/movies/:movieId' component={MoviePage} />
+            <Route exact path='/React-IMDB/movies' component={MoviesPage} />
 
-            <Route exact path='/genre/:genreName/:genreId' component={GenrePage} />
+            <Route exact path='/React-IMDB/genre/:genreName/:genreId' component={GenrePage} />
 
-            <Route exact path='/shows' component={ShowsPage} />
-            <Route exact path='/shows/:showId' component={ShowPage} />
-            <Route exact path='/shows/:showId/season/:seasonNumber' component={ShowSeasonPage} />
+            <Route exact path='/React-IMDB/shows' component={ShowsPage} />
+            <Route exact path='/React-IMDB/shows/:showId' component={ShowPage} />
+            <Route exact path='/React-IMDB/shows/:showId/season/:seasonNumber' component={ShowSeasonPage} />
 
-            <Route exact path='/actors/:actorId' component={ActorPage} />
+            <Route exact path='/React-IMDB/actors/:actorId' component={ActorPage} />
 
             <Route exact path="/React-IMDB/404" component={NotFoundPage} />
             <Redirect to="/React-IMDB/404" />

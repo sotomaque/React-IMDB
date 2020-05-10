@@ -25,7 +25,7 @@ const NavigationMovie = ({ title }) => {
 
                 <p style={{opacity: '0.6'}}>|</p>
 
-                <Link to='/movies'>
+                <Link to='/React-IMDB/movies'>
                     <p>Movies</p>
                 </Link>
                 

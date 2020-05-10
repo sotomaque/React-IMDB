@@ -54,7 +54,7 @@ const MovieInfo = ({ movie }) => {
                   label={genre.name}
                   clickable
                   style={{ margin: "5px" }}
-                  onClick={() => history.push(`/genre/${genre.name}/${genre.id}`)}
+                  onClick={() => history.push(`/React-IMDB/genre/${genre.name}/${genre.id}`)}
                 />
               ))}
             </div>

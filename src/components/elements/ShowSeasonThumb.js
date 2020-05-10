@@ -9,7 +9,7 @@ const ShowSeasonThumb = ({ image, seasonNumber, clickable }) => {
   return (
     <StyledThumb>
       {clickable ? (
-        <Link to={`/shows/${showId}/season/${seasonNumber}`}>
+        <Link to={`/React-IMDB/shows/${showId}/season/${seasonNumber}`}>
           <img className="clickable" src={image} alt="show-thumb" />
         </Link>
       ) : (

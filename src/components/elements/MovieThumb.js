@@ -6,7 +6,7 @@ import { StyledThumb } from '../styles/StyledThumb';
 const MovieThumb = ({ image, movieId, clickable }) => (
   <StyledThumb>
     {clickable ? (
-      <Link to={`/movies/${movieId}`}>
+      <Link to={`/React-IMDB/movies/${movieId}`}>
         <img className="clickable" src={image} alt="moviethumb" />
       </Link>
     ) : (

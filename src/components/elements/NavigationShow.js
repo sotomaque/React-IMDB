@@ -26,7 +26,7 @@ const NavigationShow = ({ title, seasonNumber }) => {
 
                 <p style={{opacity: '0.6'}}>|</p>
 
-                <Link to='/shows'>
+                <Link to='/React-IMDB/shows'>
                     <p>Shows</p>
                 </Link>
 
@@ -47,13 +47,13 @@ const NavigationShow = ({ title, seasonNumber }) => {
 
                 <p style={{opacity: '0.6'}}>|</p>
 
-                <Link to='/shows'>
+                <Link to='/React-IMDB/shows'>
                     <p>Shows</p>
                 </Link>
 
                 <p style={{opacity: '0.6'}}>|</p>
 
-                <Link to={`/shows/${showId}`}>
+                <Link to={`/React-IMDB/shows/${showId}`}>
                     <p>{formattedShowName}</p> 
                 </Link>
                 

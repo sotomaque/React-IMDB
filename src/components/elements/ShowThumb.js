@@ -6,7 +6,7 @@ import { StyledThumb } from '../styles/StyledThumb';
 const ShowThumb = ({ image, showId, clickable }) => (
   <StyledThumb>
     {clickable ? (
-      <Link to={`/shows/${showId}`}>
+      <Link to={`/React-IMDB/shows/${showId}`}>
         <img className="clickable" src={image} alt="show-thumb" />
       </Link>
     ) : (

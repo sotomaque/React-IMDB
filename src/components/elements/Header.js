@@ -9,8 +9,6 @@ import Typography from '@material-ui/core/Typography';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
 import Slide from '@material-ui/core/Slide';
 
 import MenuItem from '@material-ui/core/MenuItem';
@@ -130,13 +128,13 @@ export default function Header() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit" onClick={() => history.push('/movies')}>
+        <IconButton aria-label="show 4 new mails" color="inherit" onClick={() => history.push('/React-IMDB/movies')}>
             <Theaters />
         </IconButton>
         <p>Movies</p>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit" onClick={() => history.push('/shows')}>
+        <IconButton aria-label="show 11 new notifications" color="inherit" onClick={() => history.push('/React-IMDB/shows')}>
             <Tv />
         </IconButton>
         <p>Shows</p>
@@ -167,10 +165,10 @@ export default function Header() {
          
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="Movies" color="inherit"  onClick={() => history.push('/movies')}>
+            <IconButton aria-label="Movies" color="inherit"  onClick={() => history.push('/React-IMDB/movies')}>
                 <Theaters/>
             </IconButton>
-            <IconButton aria-label="Shows" color="inherit" onClick={() => history.push('/shows')}>
+            <IconButton aria-label="Shows" color="inherit" onClick={() => history.push('/React-IMDB/shows')}>
                 <Tv />
             </IconButton>
           </div>
