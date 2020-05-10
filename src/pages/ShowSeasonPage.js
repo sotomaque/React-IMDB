@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import NavigationShow from '../components/elements/NavigationShow';
 import ShowInfo from '../components/elements/ShowInfo'
 import ShowInfoBar from '../components/elements/ShowInfoBar'
-import ShowSeasonThumb from '../components/elements/ShowSeasonThumb'
+import Episode from '../components/elements/Episode'
 import Actor from '../components/elements/Actor'
 
 import Grid from '../components/elements/Grid';
@@ -18,46 +18,44 @@ import NoImage from '../images/no_image.jpg';
 
 // Hooks
 import { useShowFetch } from '../hooks/useShowFetch';
+import { useShowSeasonFetch } from '../hooks/useShowSeasonFetch';
 
-const ShowPage = () => {
+const ShowSeasonPage = () => {
 
-    let { showId } = useParams();
+    let { showId, seasonNumber } = useParams();
     const [show, loading, error] = useShowFetch(showId);
+    const [season, seasonLoading, seasonError] = useShowSeasonFetch(showId, seasonNumber);
 
-    console.log(show);
+    console.log('season: ', season)
 
-    if (error) return <div>Something went wrong...</div>;
-    if (loading) return <Spinner/> ;
+    if (error || seasonError) return <div>Something went wrong...</div>;
+    if (loading || seasonLoading) return <Spinner/>;
 
     return (
         <div style={{paddingTop: '60px'}}>
-            <NavigationShow title={show.name} />
-            <ShowInfo show={show} />
+            <NavigationShow title={show.name} seasonNumber={seasonNumber} />
+            <ShowInfo show={show} season={season} />
             <ShowInfoBar 
                 seasons={show.number_of_seasons}
-                episodes={show.number_of_episodes}
-                firstAirDate={show.first_air_date}
+                episodes={season.episodes.length}
+                firstAirDate={season.air_date}
             />
-            {/** SEASONS **/}
-            <Grid header="Seasons">
+            {/** EPISODES **/}
+            <Grid header="Episodes">
             {
-                show.seasons.map(season => (
-                    season.season_number !== 0 && 
-                    <ShowSeasonThumb
-                        key={season.id}
-                        seasonId={season.id}
-                        seasonNumber={season.season_number}
+                season.episodes.map(episode => (
+                    <Episode
+                        key={episode.id}
+                        episode={episode}
                         image={
-                            season.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${season.poster_path}`
+                            episode.still_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${episode.still_path}`
                                 : NoImage
                         }
-                        clickable
                     />
                 ))
             }
             </Grid>
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
-
             {/** ACTORS **/}
             <Grid header="Cast">
                 {
@@ -71,4 +69,4 @@ const ShowPage = () => {
     )
 }
 
-export default ShowPage;
+export default ShowSeasonPage;

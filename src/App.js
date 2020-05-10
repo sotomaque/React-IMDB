@@ -10,6 +10,7 @@ import MoviesPage from './pages/MoviesPage';
 
 import ShowsPage from './pages/ShowsPage';
 import ShowPage from './pages/ShowPage';
+import ShowSeasonPage from './pages/ShowSeasonPage';
 
 import ActorPage from './pages/ActorPage';
 
@@ -24,8 +25,11 @@ const App = () => (
             <Route exact path='/' component={HomePage} />
             <Route exact path='/movies/:movieId' component={MoviePage} />
             <Route exact path='/movies' component={MoviesPage} />
+
             <Route exact path='/shows' component={ShowsPage} />
             <Route exact path='/shows/:showId' component={ShowPage} />
+            <Route exact path='/shows/:showId/season/:seasonNumber' component={ShowSeasonPage} />
+
             <Route exact path='/actors/:actorId' component={ActorPage} />
 
             <Route path="/404" component={NotFoundPage} />
