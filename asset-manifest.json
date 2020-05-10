@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/React-IMDB/static/js/main.b3861928.chunk.js",
-    "main.js.map": "/React-IMDB/static/js/main.b3861928.chunk.js.map",
+    "main.js": "/React-IMDB/static/js/main.b27679df.chunk.js",
+    "main.js.map": "/React-IMDB/static/js/main.b27679df.chunk.js.map",
     "runtime-main.js": "/React-IMDB/static/js/runtime-main.712a69aa.js",
     "runtime-main.js.map": "/React-IMDB/static/js/runtime-main.712a69aa.js.map",
     "static/js/2.671f2c9f.chunk.js": "/React-IMDB/static/js/2.671f2c9f.chunk.js",
     "static/js/2.671f2c9f.chunk.js.map": "/React-IMDB/static/js/2.671f2c9f.chunk.js.map",
     "index.html": "/React-IMDB/index.html",
-    "precache-manifest.5ea04e997a7247681c1f41ac392fbe60.js": "/React-IMDB/precache-manifest.5ea04e997a7247681c1f41ac392fbe60.js",
+    "precache-manifest.49c82f789bab6df6e632558dfac4113a.js": "/React-IMDB/precache-manifest.49c82f789bab6df6e632558dfac4113a.js",
     "service-worker.js": "/React-IMDB/service-worker.js",
     "static/js/2.671f2c9f.chunk.js.LICENSE.txt": "/React-IMDB/static/js/2.671f2c9f.chunk.js.LICENSE.txt",
     "static/media/netflix.png": "/React-IMDB/static/media/netflix.d9247b29.png",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime-main.712a69aa.js",
     "static/js/2.671f2c9f.chunk.js",
-    "static/js/main.b3861928.chunk.js"
+    "static/js/main.b27679df.chunk.js"
   ]
 }
