@@ -157,7 +157,7 @@ export default function Header() {
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
-            onClick={() => history.push('/')}
+            onClick={() => history.push('/React-IMDB')}
           >
             <Home  />
           </IconButton>

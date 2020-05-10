@@ -24,7 +24,7 @@ const App = () => (
     <Router>
         <Header />
         <Switch>
-            <Route exact path='/' component={HomePage} />
+            <Route exact path='/React-IMDB' component={HomePage} />
             <Route exact path='/movies/:movieId' component={MoviePage} />
             <Route exact path='/movies' component={MoviesPage} />
 
@@ -37,7 +37,7 @@ const App = () => (
             <Route exact path='/actors/:actorId' component={ActorPage} />
 
             <Route path="/404" component={NotFoundPage} />
-            <Redirect to="/" />
+            <Redirect to="/404" />
  
         </Switch>
         <GlobalStyle />

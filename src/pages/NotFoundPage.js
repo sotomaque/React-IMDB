@@ -6,7 +6,7 @@ const NotFoundPage = () => {
   return (
     <div style={{ position: 'absolute', top: '30%'}}>
       <p style={{ textAlign: "center" }}>
-        <Link to="/">Go to Home </Link>
+        <Link to="/React-IMDB">Go to Home </Link>
       </p>
     </div>
   );
