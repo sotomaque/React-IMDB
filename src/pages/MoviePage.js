@@ -23,7 +23,6 @@ const MoviePage = () => {
     let { movieId } = useParams();
     const [movie, loading, error] = useMovieFetch(movieId);
     const [{ state: {simliarMovies}, loadingSimilar, errorSimilar}] = useSimilarMoviesFetch(movieId);
-    console.log(movie)
     if (error || errorSimilar) return <div>Something went wrong...</div>;
     if (loading || loadingSimilar) return <Spinner/> ;
 

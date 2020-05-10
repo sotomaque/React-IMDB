@@ -14,8 +14,6 @@ import Spinner from '../components/elements/Spinner';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 import NoImage from '../images/no_image.jpg';
 
-
-
 // Hooks
 import { useShowFetch } from '../hooks/useShowFetch';
 import { useShowSeasonFetch } from '../hooks/useShowSeasonFetch';
@@ -25,8 +23,6 @@ const ShowSeasonPage = () => {
     let { showId, seasonNumber } = useParams();
     const [show, loading, error] = useShowFetch(showId);
     const [season, seasonLoading, seasonError] = useShowSeasonFetch(showId, seasonNumber);
-
-    console.log('season: ', season)
 
     if (error || seasonError) return <div>Something went wrong...</div>;
     if (loading || seasonLoading) return <Spinner/>;

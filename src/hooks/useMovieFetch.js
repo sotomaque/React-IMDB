@@ -28,8 +28,6 @@ export const useMovieFetch = (movieId) => {
                 member => member.job === 'Director'
             );
 
-            console.log('directors: ', directors)
-            
             setState({
                 ...moviesResult,
                 actors: creditsResult.cast,

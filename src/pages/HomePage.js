@@ -23,10 +23,6 @@ const HomePage = () => {
     const [{ state: { shows, heroImageShow, currentPageShow, totalPagesShow }, loadingShow, errorShow }, fetchPopularShows ] = usePopularShowsFetch();
 
     const randomIndex = Math.round(Math.random())
-
-    if (loading) {
-        console.log('loading')
-    }
    
     if (!movies[0] || !shows[0])  return <Spinner /> 
 

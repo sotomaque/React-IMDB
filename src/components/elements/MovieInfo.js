@@ -40,11 +40,16 @@ const MovieInfo = ({ movie }) => {
 
             <div className="director">
               <h3>DIRECTOR{movie.directors.length > 1 ? "S" : ""}</h3>
-              {movie.directors.map((director) => {
-                console.log(director)
-                return (
-                <p key={director.credit_id} onClick={() => history.push(`/React-IMDB/people/${director.id}`)} >{director.name}</p>
-              )})}
+              {
+                movie.directors.map((director) => (
+                  <p
+                    key={director.credit_id}
+                    onClick={() => history.push(`/React-IMDB/people/${director.id}`)}
+                  >
+                    {director.name}
+                  </p>
+                ))
+              }
             </div>
 
             <div className="genres">
