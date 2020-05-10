@@ -33,7 +33,7 @@ const ShowInfo = ({ show, season }) => {
 
                         <div className="rating-director">
                             <div>
-                                <h3>IMDB RATING</h3>
+                                <h3>RATING</h3>
                                 <div className="score">{show.vote_average}</div>
                             </div>
                         
@@ -68,7 +68,7 @@ const ShowInfo = ({ show, season }) => {
 
                     <div className="rating-director">
                         <div>
-                            <h3>IMDB RATING</h3>
+                            <h3>RATING</h3>
                             <div className="score">{show.vote_average}</div>
                         </div>
                     
