@@ -37,7 +37,7 @@ export const useShowFetch = (showId) => {
         }
 
         setLoading(false);
-    }, [showId])
+    }, [showId, history])
 
 
     useEffect(() => {

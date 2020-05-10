@@ -43,7 +43,7 @@ export const useMovieFetch = (movieId) => {
         }
 
         setLoading(false);
-    }, [movieId])
+    }, [movieId, history])
 
 
     useEffect(() => {

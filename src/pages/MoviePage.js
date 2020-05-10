@@ -24,8 +24,8 @@ const MoviePage = () => {
     const [movie, loading, error] = useMovieFetch(movieId);
     const [{ state: {simliarMovies}, loadingSimilar, errorSimilar}] = useSimilarMoviesFetch(movieId);
     console.log(movie)
-    if (error) return <div>Something went wrong...</div>;
-    if (loading) return <Spinner/> ;
+    if (error || errorSimilar) return <div>Something went wrong...</div>;
+    if (loading || loadingSimilar) return <Spinner/> ;
 
     return (
         <div style={{paddingTop: '60px'}}>
@@ -53,7 +53,7 @@ const MoviePage = () => {
             <Grid header="Similar Movies">
                 {
                     simliarMovies.map((movie, index) => (
-                        (movie.id != movieId) && index < 20 && 
+                        (movie.id.toString !== movieId.toString) && index < 20 && 
                             <MovieThumb 
                                 key={movie.id} 
                                 clickable 

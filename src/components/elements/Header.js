@@ -99,7 +99,6 @@ function HideOnScroll(props) {
 
 export default function Header() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -107,10 +106,6 @@ export default function Header() {
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
-  };
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
   };
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // API CONSTANTS
-import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE, SEARCH_BASE_URL, POPULAR_BASE_URL_MOVIES, POPULAR_BASE_URL_SHOWS } from '../config';
+import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE, POPULAR_BASE_URL_MOVIES, POPULAR_BASE_URL_SHOWS } from '../config';
 
 // Components
 import HeroImage from '../components/elements/HeroImage';
@@ -30,7 +30,7 @@ const HomePage = () => {
    
     if (!movies[0] || !shows[0])  return <Spinner /> 
 
-    if (error) return <div>Something went wrong...</div>
+    if (error || errorShow) return <div>Something went wrong...</div>
     
     const loadMoreMovies = () => {
         const popularEndpoint = `${POPULAR_BASE_URL_MOVIES}&page=${currentPage + 1}`;
@@ -98,7 +98,7 @@ const HomePage = () => {
             {
                 loadingShow && <Spinner/>
             }
-            { !loadingShow && (
+            { currentPageShow < totalPagesShow && !loadingShow && (
                 <LoadMoreButton text="Load More" callback={loadMoreShows} />
             )}
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />

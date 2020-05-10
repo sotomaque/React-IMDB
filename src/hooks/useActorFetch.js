@@ -35,7 +35,7 @@ export const useActorFetch = (actorId) => {
         }
 
         setLoading(false);
-    }, [actorId])
+    }, [actorId, history])
 
 
     useEffect(() => {

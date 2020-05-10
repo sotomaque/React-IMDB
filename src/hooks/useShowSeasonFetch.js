@@ -25,7 +25,7 @@ export const useShowSeasonFetch = (showId, seasonNumber) => {
         }
 
         setLoading(false);
-    }, [showId])
+    }, [showId, seasonNumber])
 
 
     useEffect(() => {

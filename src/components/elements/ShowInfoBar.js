@@ -35,7 +35,7 @@ const ShowInfoBar = ({ seasons, episodes, firstAirDate, homepage }) => {
     
                         <div className="movieinfobar-netflix">
                             <span className="movieinfobar-info">
-                                <a href={`${homepage}`} target="_blank">
+                                <a href={`${homepage}`} target="_blank" rel="noopener noreferrer">
                                     <img src={Netflix} alt="watch on netflix" style={{width: '120px'}}/>
                                 </a>
                             </span>

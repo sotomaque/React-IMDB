@@ -35,7 +35,7 @@ export const useMovieByGenreFetch = (genreId) => {
 
     useEffect(() => {
         fetchMoviesByGenre(`${API_URL}discover/movie?api_key=${API_KEY}&with_genres=${genreId}`)
-    }, []);
+    }, [genreId]);
 
     return [{ state, loading, error }, fetchMoviesByGenre]
 }
