@@ -37,7 +37,7 @@ const App = () => (
             <Route exact path='/actors/:actorId' component={ActorPage} />
 
             <Route path="/404" component={NotFoundPage} />
-            <Redirect to="/404" />
+            <Redirect to="/" />
  
         </Switch>
         <GlobalStyle />
