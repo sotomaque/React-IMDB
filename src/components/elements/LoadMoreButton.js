@@ -1,11 +1,10 @@
 import React from 'react';
-
-import { StyledLoadMoreBtn } from '../styles/StyledLoadMoreBtn';
+import { Button } from '@material-ui/core'
 
 const LoadMoreButton = ({ text, callback}) => (
-    <StyledLoadMoreBtn type="button" onClick={callback}>
+    <Button variant="contained" color="primary" size='large' onClick={callback} style={{display: 'block', margin: '20px auto'}}>
         {text}
-    </StyledLoadMoreBtn>
+    </Button>
 )
 
 

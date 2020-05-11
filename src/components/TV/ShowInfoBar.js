@@ -27,7 +27,7 @@ const ShowInfoBar = ({ network, seasons, episodes, firstAirDate, homepage }) => 
         {/** NETWORK LOGO or SEASON COUNT **/}
         <div className="movieinfobar-content-col">
         {
-            network ? (<img src={`${IMAGE_BASE_URL}${LOGO_SIZE}${network.logo_path}`} />) : (
+            network ? (<img src={`${IMAGE_BASE_URL}${LOGO_SIZE}${network.logo_path}`} alt='network-logo' />) : (
                 <span className="movieinfobar-info">Seasons: {seasons}</span>
             )
         }
