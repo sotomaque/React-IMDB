@@ -20,6 +20,8 @@ export const StyledMovieInfoBar = styled.div`
   }
 
   .movieinfobar-content-col {
+    display: flex;
+    justify-content: center;
     float: left;
     width: 33.33%;
     box-sizing: border-box;
@@ -34,7 +36,7 @@ export const StyledMovieInfoBar = styled.div`
   }
 
   .movieinfobar-info {
-    padding: 5px 0 0 10px;
+    padding: 0;
     float: left;
   }
 

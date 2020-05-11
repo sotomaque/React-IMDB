@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 import { Chip } from "@material-ui/core";
 import NoImage from "../../images/no_image.jpg";
@@ -10,7 +10,6 @@ import MovieThumb from "./MovieThumb";
 import { StyledMovieInfo } from "../styles/StyledMovieInfo";
 
 const MovieInfo = ({ movie }) => {
-
   const history = useHistory();
 
   return (
@@ -40,17 +39,17 @@ const MovieInfo = ({ movie }) => {
 
             <div className="director">
               <h3>DIRECTOR{movie.directors.length > 1 ? "S" : ""}</h3>
-              {
-                movie.directors.map((director) => (
-                  <p
-                    key={director.credit_id}
-                    onClick={() => history.push(`/React-IMDB/people/${director.id}`)}
-                    style={{cursor: 'pointer'}}
-                  >
-                    {director.name}
-                  </p>
-                ))
-              }
+              {movie.directors.map((director) => (
+                <p
+                  key={director.credit_id}
+                  onClick={() =>
+                    history.push(`/React-IMDB/people/${director.id}`)
+                  }
+                  style={{ cursor: "pointer" }}
+                >
+                  {director.name}
+                </p>
+              ))}
             </div>
 
             <div className="genres">
@@ -62,7 +61,9 @@ const MovieInfo = ({ movie }) => {
                   label={genre.name}
                   clickable
                   style={{ margin: "5px" }}
-                  onClick={() => history.push(`/React-IMDB/genre/${genre.name}/${genre.id}`)}
+                  onClick={() =>
+                    history.push(`/React-IMDB/genre/${genre.name}/${genre.id}`)
+                  }
                 />
               ))}
             </div>

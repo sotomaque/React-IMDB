@@ -21,7 +21,6 @@ export const useTopRatedMoviesFetch = searchTerm => {
             isLoadMore !== -1
               ? [...prev.topRatedMovies, ...movieResult.results]
               : [...movieResult.results],
-          heroImageTopRated: prev.heroImageTopRated || movieResult.results[0],
           currentPageTopRated: movieResult.page,
           totalPagesTopRated: movieResult.total_pages,
         }));

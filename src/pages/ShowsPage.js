@@ -21,7 +21,7 @@ import NoImage from '../images/no_image.jpg';
 const ShowsPage = () => {
    
     const [{ state: { shows, heroImageShow, currentPageShow, totalPagesShow }, loadingShow, errorShow }, fetchPopularShows ] = usePopularShowsFetch();
-    const [{ state: { topRatedShows, heroImageTopRated, currentPageTopRated, totalPagesTopRated }, loadingTopRated, errorTopRated }, fetchTopRatedShows ] = useTopRatedShowsFetch();
+    const [{ state: { topRatedShows, currentPageTopRated, totalPagesTopRated }, loadingTopRated, errorTopRated }, fetchTopRatedShows ] = useTopRatedShowsFetch();
     const [searchTerm, setSearchTerm] = React.useState('');
 
     if (!shows[0] || !topRatedShows[0])  return <Spinner /> 
@@ -44,7 +44,7 @@ const ShowsPage = () => {
     }
 
     const heroImageURL = `${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImageShow.backdrop_path}`;
-    const heroImageTitle = heroImageShow.original_name;
+    const heroImageTitle = heroImageShow.name;
     const heroImageText = heroImageShow.overview;
 
     return (

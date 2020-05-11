@@ -21,7 +21,7 @@ import NoImage from '../images/no_image.jpg';
 const MoviesPage = () => {
    
     const [{ state: { movies, heroImage, currentPage, totalPages }, loading, error }, fetchPopularMovies ] = usePopularMoviesFetch();
-    const [{ state: { topRatedMovies, heroImageTopRated, currentPageTopRated, totalPagesTopRated }, loadingTopRated, errorTopRated }, fetchTopRatedMovies ] = useTopRatedMoviesFetch();
+    const [{ state: { topRatedMovies, currentPageTopRated, totalPagesTopRated }, loadingTopRated, errorTopRated }, fetchTopRatedMovies ] = useTopRatedMoviesFetch();
     const [searchTerm, setSearchTerm] = React.useState('');
    
     if (!movies[0] || !topRatedMovies[0])  return <Spinner /> 
@@ -30,7 +30,6 @@ const MoviesPage = () => {
     const loadMoreMovies = () => {
         const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage + 1}`;
         const popularEndpoint = `${POPULAR_BASE_URL_MOVIES}&page=${currentPage + 1}`;
-
         const endpoint = searchTerm ? searchEndpoint : popularEndpoint;
         fetchPopularMovies(endpoint);
     }
@@ -46,7 +45,7 @@ const MoviesPage = () => {
     }
 
     const heroImageURL = `${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImage.backdrop_path}`;
-    const heroImageTitle = heroImage.original_title;
+    const heroImageTitle = heroImage.title;
     const heroImageText = heroImage.overview;
 
     return (

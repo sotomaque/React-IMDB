@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 
 import { StyledMovieInfoBar } from '../styles/StyledMovieInfoBar';
 
@@ -10,7 +11,8 @@ const ActorInfoBar = ({ birthday, knownFor, placeOfBirth }) => {
             <div className="movieinfobar-content">
                 <div className="movieinfobar-content-col">
                     <span className="movieinfobar-info">
-                        Birthday: {birthday}
+                        <Moment fromNow date={birthday} ago/> 
+                        {' old'}
                     </span>
                 </div>
                 <div className="movieinfobar-content-col">
