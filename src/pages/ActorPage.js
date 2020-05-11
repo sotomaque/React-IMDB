@@ -2,10 +2,11 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 
 // Components
-import Navigation from '../components/elements/Navigation';
-import ActorInfo from '../components/elements/ActorInfo';
-import ActorInfoBar from '../components/elements/ActorInfoBar';
-import Role from '../components/elements/Role'
+import Navigation from '../components/Navigation/Navigation';
+
+import ActorInfo from '../components/People/ActorInfo';
+import ActorInfoBar from '../components/People/ActorInfoBar';
+import Role from '../components/People/Role'
 
 import Grid from '../components/elements/Grid';
 import Spinner from '../components/elements/Spinner';

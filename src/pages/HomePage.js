@@ -4,9 +4,9 @@ import React from 'react';
 import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE, POPULAR_BASE_URL_MOVIES, POPULAR_BASE_URL_SHOWS } from '../config';
 
 // Components
+import MovieThumb from '../components/Movie/MovieThumb';
 import HeroImage from '../components/elements/HeroImage';
 import Grid from '../components/elements/Grid';
-import MovieThumb from '../components/elements/MovieThumb';
 import LoadMoreButton from '../components/elements/LoadMoreButton';
 import Spinner from '../components/elements/Spinner';
 
@@ -15,7 +15,7 @@ import { usePopularMoviesFetch } from '../hooks/usePopularMoviesFetch';
 import { usePopularShowsFetch } from '../hooks/usePopularShowsFetch';
 
 import NoImage from '../images/no_image.jpg';
-import ShowThumb from '../components/elements/ShowThumb';
+import ShowThumb from '../components/TV/ShowThumb';
 
 const HomePage = () => {
    

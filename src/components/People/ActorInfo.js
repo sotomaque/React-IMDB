@@ -3,7 +3,7 @@ import React from 'react';
 import NoImage from '../../images/no_image.jpg';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 
-import MovieThumb from './MovieThumb';
+import MovieThumb from '../Movie/MovieThumb';
 
 import { StyledActorInfo } from '../styles/StyledActorInfo';
 

@@ -4,12 +4,13 @@ import React from 'react';
 import { IMAGE_BASE_URL, BACKDROP_SIZE, SEARCH_BASE_URL_SHOWS, POSTER_SIZE, POPULAR_BASE_URL_SHOWS, TOP_RATED_BASE_URL_SHOWS } from '../config';
 
 // Components
+import ShowThumb from '../components/TV/ShowThumb';
+
 import HeroImage from '../components/elements/HeroImage';
 import SearchBar from '../components/elements/SearchBar';
 import Grid from '../components/elements/Grid';
 import LoadMoreButton from '../components/elements/LoadMoreButton';
 import Spinner from '../components/elements/Spinner';
-import ShowThumb from '../components/elements/ShowThumb';
 
 // Hooks
 import { usePopularShowsFetch } from '../hooks/usePopularShowsFetch';

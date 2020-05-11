@@ -4,11 +4,14 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 import NoImage from '../images/no_image.jpg';
 
 // Components
-import NavigationMovie from '../components/elements/NavigationMovie';
-import MovieInfo from '../components/elements/MovieInfo'
-import MovieInfoBar from '../components/elements/MovieInfoBar'
-import Actor from '../components/elements/Actor'
-import CrewMember from '../components/elements/CrewMember'
+import NavigationMovie from '../components/Navigation/NavigationMovie';
+
+import MovieInfo from '../components/Movie/MovieInfo'
+import MovieInfoBar from '../components/Movie/MovieInfoBar'
+import MovieThumb from '../components/Movie/MovieThumb';
+
+import Actor from '../components/People/Actor'
+import CrewMember from '../components/People/CrewMember'
 
 import Grid from '../components/elements/Grid';
 import Spinner from '../components/elements/Spinner';
@@ -16,7 +19,6 @@ import Spinner from '../components/elements/Spinner';
 // Hooks
 import { useMovieFetch } from '../hooks/useMovieFetch';
 import { useSimilarMoviesFetch } from '../hooks/useSimilarMoviesFetch';
-import MovieThumb from '../components/elements/MovieThumb';
 
 const MoviePage = () => {
 
@@ -28,7 +30,7 @@ const MoviePage = () => {
 
     return (
         <div style={{paddingTop: '60px'}}>
-            <NavigationMovie title={movie.original_title} />
+            <NavigationMovie title={movie.title} />
             <MovieInfo movie={movie} />
             <MovieInfoBar time={movie.runtime} homepage={movie.homepage} budget={movie.budget} revenue={movie.revenue}/>
             <Grid header="Cast">

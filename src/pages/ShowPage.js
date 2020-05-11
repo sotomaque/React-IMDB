@@ -2,18 +2,19 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 
 // Components
-import NavigationShow from '../components/elements/NavigationShow';
-import ShowInfo from '../components/elements/ShowInfo'
-import ShowInfoBar from '../components/elements/ShowInfoBar'
-import ShowSeasonThumb from '../components/elements/ShowSeasonThumb'
-import Actor from '../components/elements/Actor'
+import NavigationShow from '../components/Navigation/NavigationShow';
+
+import ShowInfo from '../components/TV/ShowInfo'
+import ShowInfoBar from '../components/TV/ShowInfoBar'
+import ShowSeasonThumb from '../components/TV/ShowSeasonThumb'
+
+import Actor from '../components/People/Actor'
 
 import Grid from '../components/elements/Grid';
 import Spinner from '../components/elements/Spinner';
 
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
 import NoImage from '../images/no_image.jpg';
-
 
 
 // Hooks

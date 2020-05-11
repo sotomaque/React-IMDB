@@ -2,11 +2,13 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 
 // Components
-import NavigationShow from '../components/elements/NavigationShow';
-import ShowInfo from '../components/elements/ShowInfo'
-import ShowInfoBar from '../components/elements/ShowInfoBar'
-import Episode from '../components/elements/Episode'
-import Actor from '../components/elements/Actor'
+import NavigationShow from '../components/Navigation/NavigationShow';
+
+import ShowInfo from '../components/TV/ShowInfo'
+import ShowInfoBar from '../components/TV/ShowInfoBar'
+import Episode from '../components/TV/Episode'
+
+import Actor from '../components/People/Actor'
 
 import Grid from '../components/elements/Grid';
 import Spinner from '../components/elements/Spinner';

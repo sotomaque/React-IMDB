@@ -4,10 +4,11 @@ import React from 'react';
 import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE, SEARCH_BASE_URL, POPULAR_BASE_URL_MOVIES, TOP_RATED_BASE_URL_MOVIES } from '../config';
 
 // Components
+import MovieThumb from '../components/Movie/MovieThumb'; 
+
 import HeroImage from '../components/elements/HeroImage';
 import SearchBar from '../components/elements/SearchBar';
 import Grid from '../components/elements/Grid';
-import MovieThumb from '../components/elements/MovieThumb';
 import LoadMoreButton from '../components/elements/LoadMoreButton';
 import Spinner from '../components/elements/Spinner';
 

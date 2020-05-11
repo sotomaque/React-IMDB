@@ -45,6 +45,7 @@ const MovieInfo = ({ movie }) => {
                   <p
                     key={director.credit_id}
                     onClick={() => history.push(`/React-IMDB/people/${director.id}`)}
+                    style={{cursor: 'pointer'}}
                   >
                     {director.name}
                   </p>

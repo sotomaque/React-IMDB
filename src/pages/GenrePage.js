@@ -4,6 +4,7 @@ import { API_URL, API_KEY, IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from '..
 import NoImage from '../images/no_image.jpg';
 
 // Components
+import MovieThumb from '../components/Movie/MovieThumb';
 import LoadMoreButton from '../components/elements/LoadMoreButton';
 import HeroImage from '../components/elements/HeroImage';
 import Grid from '../components/elements/Grid';
@@ -12,7 +13,6 @@ import Spinner from '../components/elements/Spinner';
 // Hooks
 import { useMovieByGenreFetch } from '../hooks/useMovieByGenreFetch';
 
-import MovieThumb from '../components/elements/MovieThumb';
 
 const GenrePage = () => {
     let { genreId, genreName } = useParams();
