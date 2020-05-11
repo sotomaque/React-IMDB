@@ -46,6 +46,7 @@ const ShowPage = () => {
                         key={season.id}
                         seasonId={season.id}
                         seasonNumber={season.season_number}
+                        season={season}
                         image={
                             season.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${season.poster_path}`
                                 : NoImage

@@ -1,21 +1,30 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { StyledThumb } from "../styles/StyledThumb";
+import { StyledGridElement } from "../styles/StyledGridElement";
 
-const ShowSeasonThumb = ({ image, seasonNumber, clickable }) => {
+const ShowSeasonThumb = ({ image, season, seasonNumber, clickable }) => {
   let { showId } = useParams();
 
+  console.log(season)
   return (
-    <StyledThumb>
+    <StyledGridElement>
       {clickable ? (
-        <Link to={`/React-IMDB/shows/${showId}/season/${seasonNumber}`}>
-          <img className="clickable" src={image} alt="show-thumb" />
-        </Link>
+        <>
+          <Link to={`/React-IMDB/shows/${showId}/season/${seasonNumber}`}>
+            <img className="clickable" src={image} alt="show-thumb" />
+          </Link>
+          <span className="text-title">{season.name}</span>
+          <span className="text-subtitle">{season.episode_count} Episodes</span>
+        </>
       ) : (
-        <img src={image} alt="show-thumb" />
+        <>
+          <img src={image} alt="show-thumb" />
+          <span className="text-title">{season.name}</span>
+          <span className="text-subtitle">{season.episodes.length} Episodes</span>
+        </>
       )}
-    </StyledThumb>
+    </StyledGridElement>
   );
 };
 
