@@ -39,7 +39,7 @@ const HomePage = () => {
     }
 
     const heroImageURL = randomIndex === 0 ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImage.backdrop_path}` : `${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImageShow.backdrop_path}`;
-    const heroImageTitle = randomIndex === 0 ? heroImage.original_title: heroImageShow.original_name;
+    const heroImageTitle = randomIndex === 0 ? heroImage.title: heroImageShow.name;
     const heroImageText = randomIndex === 0 ? heroImage.overview : heroImageShow.overview;
 
     return (
