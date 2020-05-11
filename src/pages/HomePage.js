@@ -97,7 +97,7 @@ const HomePage = () => {
             { currentPageShow < totalPagesShow && !loadingShow && (
                 <LoadMoreButton text="Load More" callback={loadMoreShows} />
             )}
-            <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
+            <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
         </div>
     )
 }

@@ -5,8 +5,6 @@ import { StyledGridElement } from "../styles/StyledGridElement";
 
 const ShowSeasonThumb = ({ image, season, seasonNumber, clickable }) => {
   let { showId } = useParams();
-
-  console.log(season)
   return (
     <StyledGridElement>
       {clickable ? (

@@ -54,8 +54,7 @@ const GenrePage = () => {
             { currentPage < totalPages && !loading && 
                 <LoadMoreButton text="Load More" callback={loadMoreMovies} />
             }
-            <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
-
+            <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
         </div>
     )
 }

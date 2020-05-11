@@ -34,6 +34,7 @@ const ShowSeasonPage = () => {
             <NavigationShow title={show.name} seasonNumber={seasonNumber} />
             <ShowInfo show={show} season={season} />
             <ShowInfoBar 
+                network={ show?.networks ? show.networks[0] : false}
                 seasons={show.number_of_seasons}
                 episodes={season.episodes.length}
                 firstAirDate={season.air_date}
@@ -54,7 +55,7 @@ const ShowSeasonPage = () => {
             }
             </Grid>
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
-            {/** ACTORS **/}
+            {/** CAST **/}
             <Grid header="Cast">
                 {
                     show.actors.map((actor, index) => (
@@ -63,7 +64,7 @@ const ShowSeasonPage = () => {
                     ))
                 }
             </Grid>
-            <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
+            <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
         </div>
     )
 }

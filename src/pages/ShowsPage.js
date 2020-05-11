@@ -109,7 +109,7 @@ const ShowsPage = () => {
             {
                 loadingTopRated && <Spinner/>
             }
-            <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
+            <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
         </div>
     )
 }
