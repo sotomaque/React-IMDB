@@ -1,21 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Components
 import Header from './components/Navigation/Header';
 import HomePage from './pages/HomePage';
-
 import MoviePage from './pages/MoviePage';
 import MoviesPage from './pages/MoviesPage';
-
 import ShowsPage from './pages/ShowsPage';
 import ShowPage from './pages/ShowPage';
 import ShowSeasonPage from './pages/ShowSeasonPage';
-
 import GenrePage from './pages/GenrePage';
-
 import ActorPage from './pages/ActorPage';
-
 import NotFoundPage from './pages/NotFoundPage';
 
 import { GlobalStyle } from './components/styles/GlobalStyle';
@@ -37,7 +32,6 @@ const App = () => (
             <Route exact path='/React-IMDB/people/:actorId' component={ActorPage} />
 
             <Route exact path="/React-IMDB/404" component={NotFoundPage} />
-            <Redirect to="/React-IMDB/404" />
             <Route path="*" component={NotFoundPage} />
  
         </Switch>

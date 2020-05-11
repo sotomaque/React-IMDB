@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { StyledActor } from '../styles/StyledActor';
+import { StyledGridElement } from '../styles/StyledGridElement';
 
 const Episode = ({ image, episode }) =>  (
-    <StyledActor>
+    <StyledGridElement>
         <img src={image} alt="episode-thumb" />
-        <span className="actor-name">{episode.name}</span>
-        <span className="actor-character">Rated: {episode.vote_average} / 10</span>
-    </StyledActor>
+        <span className="text-title">{episode.name}</span>
+        <span className="text-subtitle">Rated: {episode.vote_average} / 10</span>
+    </StyledGridElement>
 )
 
 
