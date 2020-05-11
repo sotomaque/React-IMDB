@@ -31,7 +31,7 @@ const App = () => (
 
             <Route exact path='/React-IMDB/people/:actorId' component={ActorPage} />
 
-            <Route exact path="/React-IMDB/404" component={NotFoundPage} />
+            <Route path="/React-IMDB/404" component={NotFoundPage} />
             <Route path="*" component={NotFoundPage} />
  
         </Switch>
