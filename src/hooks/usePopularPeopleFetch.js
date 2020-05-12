@@ -14,7 +14,6 @@ export const usePopularPeopleFetch = () => {
 
         try {
             const peopleResult = await (await fetch(endpoint)).json();
-    
             setState(prev => ({
               ...prev,
               people:
