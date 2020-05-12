@@ -17,6 +17,7 @@ import Home from '@material-ui/icons/Home';
 import Theaters from '@material-ui/icons/Theaters';
 import Tv from '@material-ui/icons/Tv';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import PeopleAlt from '@material-ui/icons/PeopleAlt';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -134,7 +135,12 @@ export default function Header() {
         </IconButton>
         <p>Shows</p>
       </MenuItem>
-
+      <MenuItem>
+        <IconButton aria-label="show 11 new notifications" color="inherit" onClick={() => history.push('/React-IMDB/people')}>
+            <PeopleAlt />
+        </IconButton>
+        <p>People</p>
+      </MenuItem>
     </Menu>
   );
 
@@ -165,6 +171,9 @@ export default function Header() {
             </IconButton>
             <IconButton aria-label="Shows" color="inherit" onClick={() => history.push('/React-IMDB/shows')}>
                 <Tv />
+            </IconButton>
+            <IconButton aria-label="People" color="inherit" onClick={() => history.push('/React-IMDB/people')}>
+                <PeopleAlt />
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>

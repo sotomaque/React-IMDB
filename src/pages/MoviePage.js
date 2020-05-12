@@ -29,6 +29,9 @@ const MoviePage = () => {
     const [{ state: {simliarMovies, currentPageSimilar, totalPagesSimilar}, loadingSimilar, errorSimilar}, fetchSimilarMovies] = useSimilarMoviesFetch(movieId);
     const [{ state: {recommendedMovies, currentPageRec, totalPagesRec}, loadingRec, errorRec}, fetchRecommendedMovies] = useRecommendedMoviesFetch(movieId);
 
+    if (error || errorSimilar || errorRec) return <div>Something went wrong...</div>;
+    if (loading || loadingSimilar || loadingRec) return <Spinner/>;
+    
     const loadMoreSimilarMovies = () => {
         const endpoint = `${API_URL}movie/${movieId}/similar?api_key=${API_KEY}&page=${currentPageSimilar + 1}`;
         fetchSimilarMovies(endpoint);
@@ -38,9 +41,6 @@ const MoviePage = () => {
         const endpoint = `${API_URL}movie/${movieId}/recommendations?api_key=${API_KEY}&page=${currentPageRec + 1}`;
         fetchRecommendedMovies(endpoint);
     }
-
-    if (error || errorSimilar || errorRec) return <div>Something went wrong...</div>;
-    if (loading || loadingSimilar || loadingRec) return <Spinner/>;
 
     return (
         <div style={{paddingTop: '60px'}}>
@@ -62,7 +62,11 @@ const MoviePage = () => {
                 {
                     movie.crew.map((member, index) => (
                         index < 5 &&
-                            <CrewMember key={member.credit_id} member={member} clickable />
+                            <CrewMember 
+                                key={member.credit_id}
+                                member={member}
+                                clickable
+                            />
                     ))
                 }
             </Grid>

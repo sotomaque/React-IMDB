@@ -11,6 +11,7 @@ import ShowPage from './pages/ShowPage';
 import ShowSeasonPage from './pages/ShowSeasonPage';
 import GenrePage from './pages/GenrePage';
 import ActorPage from './pages/ActorPage';
+import ActorsPage from './pages/ActorsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 import { GlobalStyle } from './components/styles/GlobalStyle';
@@ -30,6 +31,8 @@ const App = () => (
             <Route exact path='/React-IMDB/shows/:showId/season/:seasonNumber' component={ShowSeasonPage} />
 
             <Route exact path='/React-IMDB/people/:actorId' component={ActorPage} />
+            <Route exact path='/React-IMDB/people' component={ActorsPage} />
+            
 
             <Route path="/React-IMDB/404" component={NotFoundPage} />
             <Redirect to='/React-IMDB' />

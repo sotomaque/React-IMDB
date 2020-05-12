@@ -44,7 +44,7 @@ const ShowPage = () => {
         const endpoint = `${API_URL}tv/${showId}/recommendations?api_key=${API_KEY}&page=${currentPageRec + 1}`;
         fetchRecommendedShows(endpoint);
     }
-
+    
     return (
         <div style={{paddingTop: '60px'}}>
             <NavigationShow title={show.name} />

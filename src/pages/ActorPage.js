@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 
 // Components
-import Navigation from '../components/Navigation/Navigation';
+import NavigationActor from '../components/Navigation/NavigationActor';
 
 import ActorInfo from '../components/People/ActorInfo';
 import ActorInfoBar from '../components/People/ActorInfoBar';
@@ -24,7 +24,7 @@ const ActorPage = () => {
 
     return (
         <div style={{paddingTop: '60px'}}>
-            <Navigation actor title={actor.name} />
+            <NavigationActor title={actor.name} />
             <ActorInfo actor={actor} />
             <ActorInfoBar birthday={actor.birthday} knownFor={actor.known_for_department} placeOfBirth={actor.place_of_birth}/>
             <Grid header="Known For">
