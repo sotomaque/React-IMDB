@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
-import { IMAGE_BASE_URL, POSTER_SIZE } from '../config';
+import { IMAGE_BASE_URL, POSTER_SIZE, API_URL, API_KEY } from '../config';
 import NoImage from '../images/no_image.jpg';
 
 // Components
@@ -15,6 +15,7 @@ import CrewMember from '../components/People/CrewMember'
 
 import Grid from '../components/elements/Grid';
 import Spinner from '../components/elements/Spinner';
+import LoadMoreButton from '../components/elements/LoadMoreButton';
 
 // Hooks
 import { useMovieFetch } from '../hooks/useMovieFetch';
@@ -25,13 +26,21 @@ const MoviePage = () => {
 
     let { movieId } = useParams();
     const [movie, loading, error] = useMovieFetch(movieId);
-    const [{ state: {simliarMovies}, loadingSimilar, errorSimilar}] = useSimilarMoviesFetch(movieId);
-    const [{ state: {recommendedMovies}, loadingRec, errorRec}] = useRecommendedMoviesFetch(movieId);
+    const [{ state: {simliarMovies, currentPageSimilar, totalPagesSimilar}, loadingSimilar, errorSimilar}, fetchSimilarMovies] = useSimilarMoviesFetch(movieId);
+    const [{ state: {recommendedMovies, currentPageRec, totalPagesRec}, loadingRec, errorRec}, fetchRecommendedMovies] = useRecommendedMoviesFetch(movieId);
 
-    // if (!recommendedMovies[0] || !simliarMovies[0] || !movie[0]) return <Spinner/>;
+    const loadMoreSimilarMovies = () => {
+        const endpoint = `${API_URL}movie/${movieId}/similar?api_key=${API_KEY}&page=${currentPageSimilar + 1}`;
+        fetchSimilarMovies(endpoint);
+    }
+
+    const loadMoreRecommendations = () => {
+        const endpoint = `${API_URL}movie/${movieId}/recommendations?api_key=${API_KEY}&page=${currentPageRec + 1}`;
+        fetchRecommendedMovies(endpoint);
+    }
 
     if (error || errorSimilar || errorRec) return <div>Something went wrong...</div>;
-    if (loading || loadingSimilar || loadingRec) return <Spinner/> ;
+    if (loading || loadingSimilar || loadingRec) return <Spinner/>;
 
     return (
         <div style={{paddingTop: '60px'}}>
@@ -58,29 +67,43 @@ const MoviePage = () => {
                 }
             </Grid>
             {/** RECOMMENDED MOVIES **/}
-            <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
-            <Grid header="Recommended Movies">
-                {
-                    recommendedMovies.map((movie, index) => (
-                        (movie.id.toString !== movieId.toString) && index < 20 && 
-                            <MovieThumb 
-                                key={movie.id} 
-                                clickable 
-                                image={movie.poster_path 
-                                    ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
-                                    : NoImage} 
-                                movieId={movie.id}
-                                movieName={movie.original_title}
-                        />
-                    ))
-                }
-            </Grid>
+            {
+                recommendedMovies.length !== 0 && (
+                    <>
+                    <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
+                    <Grid header="Recommended Movies">
+                        {
+                            recommendedMovies.map(movie => (
+                                (movie.id.toString !== movieId.toString) && 
+                                    <MovieThumb 
+                                        key={movie.id} 
+                                        clickable 
+                                        image={movie.poster_path 
+                                            ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
+                                            : NoImage} 
+                                        movieId={movie.id}
+                                        movieName={movie.original_title}
+                                />
+                            ))
+                        }
+                    </Grid>
+                    { currentPageRec < totalPagesRec && !loadingRec && 
+                
+                        <LoadMoreButton text="Load More" callback={loadMoreRecommendations} />
+                        
+                    }
+                    {
+                        loadingRec && <Spinner/>
+                    }
+                    </>
+                )
+            }          
             {/** SIMILAR MOVIES **/}
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333'}} />
             <Grid header="Similar Movies">
                 {
-                    simliarMovies.map((movie, index) => (
-                        (movie.id.toString !== movieId.toString) && index < 20 && 
+                    simliarMovies.map(movie=> (
+                        (movie.id.toString !== movieId.toString) && 
                             <MovieThumb 
                                 key={movie.id} 
                                 clickable 
@@ -93,6 +116,14 @@ const MoviePage = () => {
                     ))
                 }
             </Grid>
+            { currentPageSimilar < totalPagesSimilar && !loadingSimilar && 
+                
+                <LoadMoreButton text="Load More" callback={loadMoreSimilarMovies} />
+                
+            }
+            {
+                loadingSimilar && <Spinner/>
+            }
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
         </div>
     )

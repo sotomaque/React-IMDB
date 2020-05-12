@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { API_URL, API_KEY } from '../config';
 
 export const useSimilarMoviesFetch = (movie_id) => {
@@ -6,15 +6,14 @@ export const useSimilarMoviesFetch = (movie_id) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
   
-    const fetchSimilarMovies = useCallback(async (movieId) => {
+    const fetchSimilarMovies = async (endpoint) => {
       setError(false);
       setLoading(true);
       
-      const endpoint = `${API_URL}movie/${movie_id}/similar?api_key=${API_KEY}`;
       const isLoadMore = endpoint.search('page');
-  
+
       try {
-        const movieResult = await (await fetch(endpoint)).json();
+        const movieResult = await (await fetch(endpoint)).json();      
 
         setState(prev => ({
           ...prev,
@@ -31,14 +30,11 @@ export const useSimilarMoviesFetch = (movie_id) => {
         console.error(error);
       }
       setLoading(false);
-    }, [movie_id]);
-
-    
-
+    };
 
     useEffect(() => {
         fetchSimilarMovies(`${API_URL}movie/${movie_id}/similar?api_key=${API_KEY}`)
-    }, [fetchSimilarMovies, movie_id]);
+    }, [movie_id]);
 
     return [{ state, loading, error }, fetchSimilarMovies]
 }

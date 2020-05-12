@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { API_URL, API_KEY } from '../config';
 
-export const usePopularMoviesFetch = searchTerm => {
+export const usePopularMoviesFetch = () => {
     const [state, setState] = useState({ movies: [] });
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);

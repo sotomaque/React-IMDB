@@ -1,16 +1,15 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { API_URL, API_KEY } from '../config';
 
 export const useRecommendedMoviesFetch = (movie_id) => {
-    const [state, setState] = useState({ simliarMovies: [] });
+    const [state, setState] = useState({ recommendedMovies: [] });
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
   
-    const fetchRecommendedMovies = useCallback(async (movieId) => {
+    const fetchRecommendedMovies = async (endpoint) => {
       setError(false);
       setLoading(true);
       
-      const endpoint = `${API_URL}movie/${movie_id}/recommendations?api_key=${API_KEY}`;
       const isLoadMore = endpoint.search('page');
   
       try {
@@ -31,14 +30,11 @@ export const useRecommendedMoviesFetch = (movie_id) => {
         console.error(error);
       }
       setLoading(false);
-    }, [movie_id]);
-
+    };
 
     useEffect(() => {
         fetchRecommendedMovies(`${API_URL}movie/${movie_id}/recommendations?api_key=${API_KEY}`)
-    }, [fetchRecommendedMovies, movie_id]);
-
-    console.log(state)
+    }, [movie_id]);
 
     return [{ state, loading, error }, fetchRecommendedMovies]
 }
