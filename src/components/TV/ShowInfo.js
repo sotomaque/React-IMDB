@@ -12,6 +12,8 @@ import { StyledMovieInfo } from "../styles/StyledMovieInfo";
 const ShowInfo = ({ show, season }) => {
   const history = useHistory();
 
+  console.log(show);
+
   if (!season) {
     return (
       <StyledMovieInfo backdrop={show.backdrop_path}>
@@ -38,38 +40,51 @@ const ShowInfo = ({ show, season }) => {
                 <div className="score">{show.vote_average}</div>
               </div>
 
-              <div className="director">
-                <h3>CREATED BY</h3>
-                {show.created_by.map((creator) => (
-                  <p
-                    key={creator.credit_id}
-                    onClick={() =>
-                      history.push(`/React-IMDB/people/${creator.id}`)
-                    }
-                    style={{ cursor: "pointer" }}
-                  >
-                    {creator.name}
-                  </p>
-                ))}
-              </div>
+              {
+                show.created_by.length !== 0 ? (
+                  <div className="director">
+                    <h3>CREATED BY</h3>
+                    {show.created_by.map((creator) => (
+                      <p
+                        key={creator.credit_id}
+                        onClick={() =>
+                          history.push(`/React-IMDB/people/${creator.id}`)
+                        }
+                        style={{ cursor: "pointer" }}
+                      >
+                        {creator.name}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                <div className="director"></div>
+                )
+              }
 
-              <div className="genres">
-                <h3>GENRE{show.genres.length > 1 ? "S" : ""}</h3>
-                {show.genres.map((genre) => (
-                  <Chip
-                    color="default"
-                    key={genre.id}
-                    label={genre.name}
-                    clickable
-                    style={{ margin: "5px" }}
-                    onClick={() =>
-                      history.push(
-                        `/React-IMDB/genre/${genre.name}/${genre.id}`
-                      )
-                    }
-                  />
-                ))}
-              </div>
+              {
+                show.genres.length !== 0 ? (
+                  <div className="genres">
+                    <h3>GENRE{show.genres.length > 1 ? "S" : ""}</h3>
+                    {show.genres.map((genre) => (
+                      <Chip
+                        color="default"
+                        key={genre.id}
+                        label={genre.name}
+                        clickable
+                        style={{ margin: "5px" }}
+                        onClick={() =>
+                          history.push(
+                            `/React-IMDB/genre/${genre.name}/${genre.id}`
+                          )
+                        }
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="genres"></div>
+                )
+              }
+              
             </div>
           </div>
         </div>
@@ -93,8 +108,15 @@ const ShowInfo = ({ show, season }) => {
 
         <div className="movieinfo-text">
           <h1>{season.name}</h1>
-          <h3>Plot</h3>
-          <p>{season.overview}</p>
+          {
+            season.overview !== "" && (
+              <>
+                <h3>Plot</h3>
+                <p>{season.overview}</p>
+              </>
+            )
+          }
+
 
           <div className="rating-director">
             <div>
