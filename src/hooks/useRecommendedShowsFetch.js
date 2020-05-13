@@ -22,7 +22,7 @@ export const useRecommendedShowsFetch = (show_id) => {
                 ? [...prev.recommendedShows, ...showResults.results]
                 : [...showResults.results],
             currentPageRec: showResults.page,
-            totalPagesRec: showResults.total_pages,
+            totalPagesRec: showResults.total_pages
           }));
 
       } catch (error) {

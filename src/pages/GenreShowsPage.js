@@ -29,7 +29,7 @@ const GenreShowsPage = () => {
         <div style={{paddingTop: '60px'}}>
             <HeroImage 
                 image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImage.backdrop_path}`}
-                title={heroImage.original_title}
+                title={heroImage.name}
                 text={heroImage.overview}
             />
             <Grid header={`${genreName} Series`}>

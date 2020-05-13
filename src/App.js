@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Components
 import Header from './components/Navigation/Header';
@@ -35,9 +35,7 @@ const App = () => (
             <Route exact path='/React-IMDB/people' component={ActorsPage} />
             
 
-            <Route path="/React-IMDB/404" component={NotFoundPage} />
-            <Redirect to='/React-IMDB' />
-            
+            <Route path="/React-IMDB/404" component={NotFoundPage} />            
             <Route path="*" component={NotFoundPage} />
  
         </Switch>
