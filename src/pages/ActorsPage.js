@@ -21,6 +21,8 @@ import HeroImage from "../components/elements/HeroImage";
 import { usePopularPeopleFetch } from "../hooks/usePopularPeopleFetch";
 import { usePopularMoviesFetch } from "../hooks/usePopularMoviesFetch";
 
+import { PageStyle } from '../components/styles/PageStyle';
+
 const ActorsPage = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
@@ -50,7 +52,7 @@ const ActorsPage = () => {
   const heroImageText = heroImage.overview;
 
   return (
-    <div style={{ paddingTop: "50px" }}>
+    <PageStyle>
       {!searchTerm && (
         <HeroImage
           image={heroImageURL}
@@ -69,7 +71,7 @@ const ActorsPage = () => {
         <LoadMoreButton text="Load More" callback={loadMorePeople} />
       )}
       <hr style={{ height: "50px", border: "none", backgroundColor: "#333" }} />
-    </div>
+    </PageStyle>
   );
 };
 

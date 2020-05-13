@@ -13,6 +13,7 @@ import Spinner from '../components/elements/Spinner';
 // Hooks
 import { useShowsByGenreFetch } from '../hooks/useShowsByGenreFetch';
 
+import { PageStyle } from '../components/styles/PageStyle';
 
 const GenreShowsPage = () => {
     let { genreId, genreName } = useParams();
@@ -26,7 +27,7 @@ const GenreShowsPage = () => {
     }
 
     return (
-        <div style={{paddingTop: '50px'}}>
+        <PageStyle>
             <HeroImage 
                 image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${heroImage.backdrop_path}`}
                 title={heroImage.name}
@@ -54,7 +55,7 @@ const GenreShowsPage = () => {
                 <LoadMoreButton text="Load More" callback={loadMoreShows} />
             }
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
-        </div>
+        </PageStyle>
     )
 }
 

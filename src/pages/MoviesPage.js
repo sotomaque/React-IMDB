@@ -16,6 +16,7 @@ import Spinner from '../components/elements/Spinner';
 import { usePopularMoviesFetch } from '../hooks/usePopularMoviesFetch';
 import { useTopRatedMoviesFetch } from '../hooks/useTopRatedMoviesFetch';
 
+import { PageStyle } from '../components/styles/PageStyle';
 
 const MoviesPage = () => {
    
@@ -48,7 +49,7 @@ const MoviesPage = () => {
     const heroImageText = heroImage.overview;
 
     return (
-        <div style={{paddingTop: '50px'}}>
+        <PageStyle>
             {
                 !searchTerm && (
                     <HeroImage 
@@ -110,7 +111,7 @@ const MoviesPage = () => {
                 loadingTopRated && <Spinner/>
             }
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
-        </div>
+        </PageStyle>
     )
 }
 

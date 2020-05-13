@@ -24,6 +24,8 @@ import { useShowFetch } from "../hooks/useShowFetch";
 import { useSimilarShowsFetch } from "../hooks/useSimilarShowsFetch";
 import { useRecommendedShowsFetch } from "../hooks/useRecommendedShowsFetch";
 
+import { PageStyle } from '../components/styles/PageStyle';
+
 const ShowPage = () => {
   let { showId } = useParams();
   const [show, loading, error] = useShowFetch(showId);
@@ -63,7 +65,7 @@ const ShowPage = () => {
   };
 
   return (
-    <div style={{ paddingTop: "50px" }}>
+    <PageStyle>
       <NavigationShow title={show.name} />
       <ShowInfo show={show} />
       <ShowInfoBar
@@ -172,7 +174,7 @@ const ShowPage = () => {
           marginBottom: "0",
         }}
       />
-    </div>
+    </PageStyle>
   );
 };
 

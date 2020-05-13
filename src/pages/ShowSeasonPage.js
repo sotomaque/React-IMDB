@@ -20,6 +20,8 @@ import NoImage from '../images/no_image.jpg';
 import { useShowFetch } from '../hooks/useShowFetch';
 import { useShowSeasonFetch } from '../hooks/useShowSeasonFetch';
 
+import { PageStyle } from '../components/styles/PageStyle';
+
 const ShowSeasonPage = () => {
 
     let { showId, seasonNumber } = useParams();
@@ -30,7 +32,7 @@ const ShowSeasonPage = () => {
     if (loading || seasonLoading) return <Spinner/>;
 
     return (
-        <div style={{paddingTop: '50px'}}>
+        <PageStyle>
             <NavigationShow title={show.name} seasonNumber={seasonNumber} />
             <ShowInfo show={show} season={season} />
             <ShowInfoBar 
@@ -65,7 +67,7 @@ const ShowSeasonPage = () => {
                 }
             </Grid>
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
-        </div>
+        </PageStyle>
     )
 }
 

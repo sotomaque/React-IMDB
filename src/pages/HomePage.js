@@ -17,6 +17,9 @@ import { usePopularShowsFetch } from '../hooks/usePopularShowsFetch';
 import NoImage from '../images/no_image.jpg';
 import ShowThumb from '../components/TV/ShowThumb';
 
+import { PageStyle } from '../components/styles/PageStyle';
+
+
 const HomePage = () => {
    
     const [{ state: { movies, heroImage, currentPage, totalPages }, loading, error }, fetchPopularMovies ] = usePopularMoviesFetch();
@@ -43,7 +46,7 @@ const HomePage = () => {
     const heroImageText = randomIndex === 0 ? heroImage.overview : heroImageShow.overview;
 
     return (
-        <div style={{paddingTop: '50px'}}>
+        <PageStyle>
             
             <HeroImage 
                 image={heroImageURL}
@@ -98,7 +101,7 @@ const HomePage = () => {
                 <LoadMoreButton text="Load More" callback={loadMoreShows} />
             )}
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
-        </div>
+        </PageStyle>
     )
 }
 

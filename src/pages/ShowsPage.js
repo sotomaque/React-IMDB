@@ -18,6 +18,9 @@ import { useTopRatedShowsFetch } from '../hooks/useTopRatedShowsFetch';
 
 import NoImage from '../images/no_image.jpg';
 
+import { PageStyle } from '../components/styles/PageStyle';
+
+
 const ShowsPage = () => {
    
     const [{ state: { shows, heroImageShow, currentPageShow, totalPagesShow }, loadingShow, errorShow }, fetchPopularShows ] = usePopularShowsFetch();
@@ -48,7 +51,7 @@ const ShowsPage = () => {
     const heroImageText = heroImageShow.overview;
 
     return (
-        <div style={{paddingTop: '50px'}}>
+        <PageStyle>
             {
                 !searchTerm && (
                     <HeroImage 
@@ -110,7 +113,7 @@ const ShowsPage = () => {
                 loadingTopRated && <Spinner/>
             }
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
-        </div>
+        </PageStyle>
     )
 }
 

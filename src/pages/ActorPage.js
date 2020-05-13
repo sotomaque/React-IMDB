@@ -14,6 +14,8 @@ import Spinner from '../components/elements/Spinner';
 // Hooks
 import { useActorFetch } from '../hooks/useActorFetch';
 
+import { PageStyle } from '../components/styles/PageStyle';
+
 const ActorPage = () => {
 
     let { actorId } = useParams();
@@ -23,7 +25,7 @@ const ActorPage = () => {
     if (loading) return <Spinner/> ;
 
     return (
-        <div style={{paddingTop: '50px'}}>
+        <PageStyle>
             <NavigationActor title={actor.name} />
             <ActorInfo actor={actor} />
             <ActorInfoBar birthday={actor.birthday} knownFor={actor.known_for_department} placeOfBirth={actor.place_of_birth}/>
@@ -111,7 +113,7 @@ const ActorPage = () => {
             }
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
 
-        </div>
+        </PageStyle>
     )
 }
 

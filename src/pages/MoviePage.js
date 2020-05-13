@@ -22,6 +22,8 @@ import { useMovieFetch } from '../hooks/useMovieFetch';
 import { useSimilarMoviesFetch } from '../hooks/useSimilarMoviesFetch';
 import { useRecommendedMoviesFetch } from '../hooks/useRecommendedMoviesFetch';
 
+import { PageStyle } from '../components/styles/PageStyle';
+
 const MoviePage = () => {
 
     let { movieId } = useParams();
@@ -43,7 +45,7 @@ const MoviePage = () => {
     }
 
     return (
-        <div style={{paddingTop: '50px'}}>
+        <PageStyle>
             <NavigationMovie title={movie.title} />
             <MovieInfo movie={movie} />
             <MovieInfoBar time={movie.runtime} homepage={movie.homepage} budget={movie.budget} revenue={movie.revenue}/>
@@ -129,7 +131,7 @@ const MoviePage = () => {
                 loadingSimilar && <Spinner/>
             }
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
-        </div>
+        </PageStyle>
     )
 }
 
