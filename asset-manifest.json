@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/React-IMDB/static/js/main.e941c594.chunk.js",
-    "main.js.map": "/React-IMDB/static/js/main.e941c594.chunk.js.map",
+    "main.js": "/React-IMDB/static/js/main.add051cb.chunk.js",
+    "main.js.map": "/React-IMDB/static/js/main.add051cb.chunk.js.map",
     "runtime-main.js": "/React-IMDB/static/js/runtime-main.712a69aa.js",
     "runtime-main.js.map": "/React-IMDB/static/js/runtime-main.712a69aa.js.map",
-    "static/js/2.b38f2808.chunk.js": "/React-IMDB/static/js/2.b38f2808.chunk.js",
-    "static/js/2.b38f2808.chunk.js.map": "/React-IMDB/static/js/2.b38f2808.chunk.js.map",
+    "static/js/2.cca7a0ba.chunk.js": "/React-IMDB/static/js/2.cca7a0ba.chunk.js",
+    "static/js/2.cca7a0ba.chunk.js.map": "/React-IMDB/static/js/2.cca7a0ba.chunk.js.map",
     "index.html": "/React-IMDB/index.html",
-    "precache-manifest.c04e9488aeb8037155052007166235f4.js": "/React-IMDB/precache-manifest.c04e9488aeb8037155052007166235f4.js",
+    "precache-manifest.f9e713438a66694c5f92045a49b11535.js": "/React-IMDB/precache-manifest.f9e713438a66694c5f92045a49b11535.js",
     "service-worker.js": "/React-IMDB/service-worker.js",
-    "static/js/2.b38f2808.chunk.js.LICENSE.txt": "/React-IMDB/static/js/2.b38f2808.chunk.js.LICENSE.txt",
+    "static/js/2.cca7a0ba.chunk.js.LICENSE.txt": "/React-IMDB/static/js/2.cca7a0ba.chunk.js.LICENSE.txt",
     "static/media/netflix.png": "/React-IMDB/static/media/netflix.d9247b29.png",
     "static/media/no_image.jpg": "/React-IMDB/static/media/no_image.31f5bb1d.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.712a69aa.js",
-    "static/js/2.b38f2808.chunk.js",
-    "static/js/main.e941c594.chunk.js"
+    "static/js/2.cca7a0ba.chunk.js",
+    "static/js/main.add051cb.chunk.js"
   ]
 }
