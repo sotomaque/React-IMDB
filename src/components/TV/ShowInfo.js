@@ -12,8 +12,6 @@ import { StyledMovieInfo } from "../styles/StyledMovieInfo";
 const ShowInfo = ({ show, season }) => {
   const history = useHistory();
 
-  console.log(show);
-
   if (!season) {
     return (
       <StyledMovieInfo backdrop={show.backdrop_path}>
