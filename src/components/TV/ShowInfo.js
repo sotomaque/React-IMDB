@@ -43,7 +43,7 @@ const ShowInfo = ({ show, season }) => {
               {
                 show.created_by.length !== 0 ? (
                   <div className="director">
-                    <h3>CREATED BY</h3>
+                    <h3>CREATOR{show.created_by.length > 1 ? "S" : ""}</h3>
                     {show.created_by.map((creator) => (
                       <p
                         key={creator.credit_id}
