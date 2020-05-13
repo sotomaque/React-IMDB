@@ -32,8 +32,6 @@ export const useRecommendedShowsFetch = (show_id) => {
       setLoading(false);
     };
 
-    console.log('rs:', state)
-
     useEffect(() => {
         fetchRecommendedShows(`${API_URL}tv/${show_id}/recommendations?api_key=${API_KEY}`)
     }, [show_id]);

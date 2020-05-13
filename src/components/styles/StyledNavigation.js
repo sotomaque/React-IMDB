@@ -7,6 +7,7 @@ export const StyledNavigation = styled.div`
   height: 70px;
   background: #353535;
   color: #fff;
+  margin-top: -5px;
 
   .navigation-content {
     max-width: 1280px;
