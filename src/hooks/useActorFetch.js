@@ -21,12 +21,18 @@ export const useActorFetch = (actorId) => {
                 history.goBack();
             }
             const result = await response.json();
-            const knownforEndpoint = `${API_URL}person/${actorId}/movie_credits?api_key=${API_KEY}`;
-            const knownForResults = await (await fetch(knownforEndpoint)).json();
-            
+            const knownforMoviesEndpoint = `${API_URL}person/${actorId}/movie_credits?api_key=${API_KEY}`;
+            const knownForMoviesResults = await (await fetch(knownforMoviesEndpoint)).json();
+
+            const knownForShowsEndpoint = `${API_URL}person/${actorId}/tv_credits?api_key=${API_KEY}`;
+            const knownForShowsResults = await (await fetch(knownForShowsEndpoint)).json();
+
             setState({
                 ...result,
-                roles: knownForResults.cast
+                movies: knownForMoviesResults.cast,
+                shows: knownForShowsResults.cast,
+                moviesCrew: knownForMoviesResults.crew,
+                showsCrew: knownForShowsResults.crew
             });
             
         } catch (error) {
@@ -36,7 +42,6 @@ export const useActorFetch = (actorId) => {
 
         setLoading(false);
     }, [actorId, history])
-
 
     useEffect(() => {
         fetchData();
