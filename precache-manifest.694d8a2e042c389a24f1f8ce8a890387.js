@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9e483d2c397406ba6def046204d8e377",
+    "revision": "4e113f2634f925e29cc6c67d0e3efc21",
     "url": "/React-IMDB/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-IMDB/static/js/2.0c3718e1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "97ed1b20a58f6832f219",
-    "url": "/React-IMDB/static/js/main.0fbf08ac.chunk.js"
+    "revision": "3f0cdb35a6310b2765d4",
+    "url": "/React-IMDB/static/js/main.a8e58a6b.chunk.js"
   },
   {
     "revision": "8d456ea8752a3889f2f3",
