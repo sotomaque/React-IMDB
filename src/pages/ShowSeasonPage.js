@@ -30,7 +30,7 @@ const ShowSeasonPage = () => {
     if (loading || seasonLoading) return <Spinner/>;
 
     return (
-        <div style={{paddingTop: '60px'}}>
+        <div style={{paddingTop: '50px'}}>
             <NavigationShow title={show.name} seasonNumber={seasonNumber} />
             <ShowInfo show={show} season={season} />
             <ShowInfoBar 

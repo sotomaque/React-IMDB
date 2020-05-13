@@ -43,7 +43,7 @@ const HomePage = () => {
     const heroImageText = randomIndex === 0 ? heroImage.overview : heroImageShow.overview;
 
     return (
-        <div style={{paddingTop: '60px'}}>
+        <div style={{paddingTop: '50px'}}>
             
             <HeroImage 
                 image={heroImageURL}

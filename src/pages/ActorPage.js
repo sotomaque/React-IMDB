@@ -23,7 +23,7 @@ const ActorPage = () => {
     if (loading) return <Spinner/> ;
 
     return (
-        <div style={{paddingTop: '60px'}}>
+        <div style={{paddingTop: '50px'}}>
             <NavigationActor title={actor.name} />
             <ActorInfo actor={actor} />
             <ActorInfoBar birthday={actor.birthday} knownFor={actor.known_for_department} placeOfBirth={actor.place_of_birth}/>

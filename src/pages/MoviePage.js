@@ -43,7 +43,7 @@ const MoviePage = () => {
     }
 
     return (
-        <div style={{paddingTop: '60px'}}>
+        <div style={{paddingTop: '50px'}}>
             <NavigationMovie title={movie.title} />
             <MovieInfo movie={movie} />
             <MovieInfoBar time={movie.runtime} homepage={movie.homepage} budget={movie.budget} revenue={movie.revenue}/>

@@ -63,7 +63,7 @@ const ShowPage = () => {
   };
 
   return (
-    <div style={{ paddingTop: "60px" }}>
+    <div style={{ paddingTop: "50px" }}>
       <NavigationShow title={show.name} />
       <ShowInfo show={show} />
       <ShowInfoBar

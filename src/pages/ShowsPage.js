@@ -48,7 +48,7 @@ const ShowsPage = () => {
     const heroImageText = heroImageShow.overview;
 
     return (
-        <div style={{paddingTop: '60px'}}>
+        <div style={{paddingTop: '50px'}}>
             {
                 !searchTerm && (
                     <HeroImage 

@@ -48,7 +48,7 @@ const MoviesPage = () => {
     const heroImageText = heroImage.overview;
 
     return (
-        <div style={{paddingTop: '60px'}}>
+        <div style={{paddingTop: '50px'}}>
             {
                 !searchTerm && (
                     <HeroImage 
