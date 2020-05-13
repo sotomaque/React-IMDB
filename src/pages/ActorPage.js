@@ -101,6 +101,7 @@ const ActorPage = () => {
                                         role={role} 
                                         job={role.job} 
                                         clickable 
+                                        show
                                     />
                                 ))
                             }
