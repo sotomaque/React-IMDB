@@ -74,7 +74,7 @@ const ShowInfo = ({ show, season }) => {
                         style={{ margin: "5px" }}
                         onClick={() =>
                           history.push(
-                            `/React-IMDB/genre/${genre.name}/${genre.id}`
+                            `/React-IMDB/shows/genre/${genre.name}/${genre.id}`
                           )
                         }
                       />

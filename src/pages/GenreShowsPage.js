@@ -4,26 +4,25 @@ import { API_URL, API_KEY, IMAGE_BASE_URL, POSTER_SIZE, BACKDROP_SIZE } from '..
 import NoImage from '../images/no_image.jpg';
 
 // Components
-import MovieThumb from '../components/Movie/MovieThumb';
+import ShowThumb from '../components/TV/ShowThumb';
 import LoadMoreButton from '../components/elements/LoadMoreButton';
 import HeroImage from '../components/elements/HeroImage';
 import Grid from '../components/elements/Grid';
 import Spinner from '../components/elements/Spinner';
 
 // Hooks
-import { useMovieByGenreFetch } from '../hooks/useMovieByGenreFetch';
+import { useShowsByGenreFetch } from '../hooks/useShowsByGenreFetch';
 
 
-const GenrePage = () => {
+const GenreShowsPage = () => {
     let { genreId, genreName } = useParams();
-    const [{ state: { movies, heroImage, currentPage, totalPages }, loading, error }, fetchMoviesByGenre ] = useMovieByGenreFetch(genreId);
+    const [{ state: { shows, heroImage, currentPage, totalPages }, loading, error }, fetchShowsByGenre ] = useShowsByGenreFetch(genreId);
 
-    if (!movies[0] || loading) return <Spinner/> ;
+    if (!shows[0] || loading) return <Spinner/> ;
     if (error) return <div>Something went wrong...</div>;
 
-    const loadMoreMovies = () => {
-
-        fetchMoviesByGenre(`${API_URL}discover/movie?api_key=${API_KEY}&with_genres=${genreId}&page=${currentPage + 1}`);
+    const loadMoreShows = () => {
+        fetchShowsByGenre(`${API_URL}discover/tv?api_key=${API_KEY}&with_genres=${genreId}&page=${currentPage + 1}`);
     }
 
     return (
@@ -33,17 +32,17 @@ const GenrePage = () => {
                 title={heroImage.original_title}
                 text={heroImage.overview}
             />
-            <Grid header={`${genreName}`}>
+            <Grid header={`${genreName} Series`}>
                 {
-                    movies.map(movie => (
-                        <MovieThumb 
-                            key={movie.id} 
+                    shows.map(show => (
+                        <ShowThumb 
+                            key={show.id} 
                             clickable 
-                            image={movie.poster_path 
-                                ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
+                            image={show.poster_path 
+                                ? `${IMAGE_BASE_URL}${POSTER_SIZE}${show.poster_path}`
                                 : NoImage} 
-                            movieId={movie.id}
-                            movieName={movie.original_title}
+                            showId={show.id}
+                            showName={show.original_title}
                         />
                     ))
                 }
@@ -52,11 +51,11 @@ const GenrePage = () => {
                 loading && <Spinner/>
             }
             { currentPage < totalPages && !loading && 
-                <LoadMoreButton text="Load More" callback={loadMoreMovies} />
+                <LoadMoreButton text="Load More" callback={loadMoreShows} />
             }
             <hr style={{height: '50px', border: 'none', backgroundColor: '#333', marginBottom: '0'}} />
         </div>
     )
 }
 
-export default GenrePage;
+export default GenreShowsPage;

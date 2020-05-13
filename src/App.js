@@ -9,7 +9,8 @@ import MoviesPage from './pages/MoviesPage';
 import ShowsPage from './pages/ShowsPage';
 import ShowPage from './pages/ShowPage';
 import ShowSeasonPage from './pages/ShowSeasonPage';
-import GenrePage from './pages/GenrePage';
+import GenreMoviesPage from './pages/GenreMoviesPage';
+import GenreShowsPage from './pages/GenreShowsPage';
 import ActorPage from './pages/ActorPage';
 import ActorsPage from './pages/ActorsPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -23,12 +24,12 @@ const App = () => (
             <Route exact path='/React-IMDB' component={HomePage} />
             <Route exact path='/React-IMDB/movies/:movieId' component={MoviePage} />
             <Route exact path='/React-IMDB/movies' component={MoviesPage} />
-
-            <Route exact path='/React-IMDB/genre/:genreName/:genreId' component={GenrePage} />
+            <Route exact path='/React-IMDB/movies/genre/:genreName/:genreId' component={GenreMoviesPage} />
 
             <Route exact path='/React-IMDB/shows' component={ShowsPage} />
             <Route exact path='/React-IMDB/shows/:showId' component={ShowPage} />
             <Route exact path='/React-IMDB/shows/:showId/season/:seasonNumber' component={ShowSeasonPage} />
+            <Route exact path='/React-IMDB/shows/genre/:genreName/:genreId' component={GenreShowsPage} />
 
             <Route exact path='/React-IMDB/people/:actorId' component={ActorPage} />
             <Route exact path='/React-IMDB/people' component={ActorsPage} />
