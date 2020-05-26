@@ -144,6 +144,7 @@ export default function Navbar({ session }) {
       <CssBaseline />
       <AppBar
         position="fixed"
+        color="primary"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
