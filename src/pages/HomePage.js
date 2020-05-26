@@ -18,10 +18,14 @@ import NoImage from '../images/no_image.jpg';
 import ShowThumb from '../components/TV/ShowThumb';
 
 import { PageStyle } from '../components/styles/PageStyle';
+import { AuthContext } from '../auth';
 
 
 const HomePage = () => {
    
+    const { authState } = React.useContext(AuthContext);
+    console.log({authState})
+
     const [{ state: { movies, heroImage, currentPage, totalPages }, loading, error }, fetchPopularMovies ] = usePopularMoviesFetch();
     const [{ state: { shows, heroImageShow, currentPageShow, totalPagesShow }, loadingShow, errorShow }, fetchPopularShows ] = usePopularShowsFetch();
 
