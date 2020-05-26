@@ -16,12 +16,18 @@ import ActorsPage from './pages/ActorsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 import { GlobalStyle } from './components/styles/GlobalStyle';
+import RegistrationPage from './pages/RegistrationPage';
+import LoginPage from './pages/LoginPage';
 
 const App = () => (
     <Router>
         <Header />
         <Switch>
             <Route exact path='/React-IMDB' component={HomePage} />
+            <Route path='/React-IMDB/register' component={RegistrationPage} />
+            <Route path='/React-IMDB/login' component={LoginPage} />
+
+
             <Route exact path='/React-IMDB/movies/:movieId' component={MoviePage} />
             <Route exact path='/React-IMDB/movies' component={MoviesPage} />
             <Route exact path='/React-IMDB/movies/genre/:genreName/:genreId' component={GenreMoviesPage} />

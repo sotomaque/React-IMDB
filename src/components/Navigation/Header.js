@@ -1,49 +1,88 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React from "react";
+import clsx from "clsx";
+import { fade, makeStyles, useTheme } from "@material-ui/core/styles";
+import Drawer from "@material-ui/core/Drawer";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import List from "@material-ui/core/List";
+import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import InputBase from '@material-ui/core/InputBase';
 
-import { fade, makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
+import SearchIcon from '@material-ui/icons/Search';
+import HomeIcon from "@material-ui/icons/Home";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ListIcon from "@material-ui/icons/List";
+import AddIcon from "@material-ui/icons/Add";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
-import CssBaseline from '@material-ui/core/CssBaseline';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Slide from '@material-ui/core/Slide';
+import { useHistory } from "react-router-dom";
+import { Paper } from "@material-ui/core";
 
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import Home from '@material-ui/icons/Home';
-import Theaters from '@material-ui/icons/Theaters';
-import Tv from '@material-ui/icons/Tv';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import PeopleAlt from '@material-ui/icons/PeopleAlt';
+const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
-  grow: {
+  root: {
+    display: "flex",
+  },
+  title: {
     flexGrow: 1,
+  },
+  appBar: {
+    transition: theme.transitions.create(["margin", "width"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(["margin", "width"], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
+  hide: {
+    display: "none",
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  drawerHeader: {
+    display: "flex",
+    alignItems: "center",
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+    justifyContent: "flex-end",
   },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: fade(theme.palette.common.white, 0.65),
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: fade(theme.palette.common.white, 0.85),
     },
-    marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      marginLeft: theme.spacing(1),
       width: 'auto',
     },
   },
@@ -65,132 +104,169 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-  sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-    },
-  },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      width: '12ch',
+      '&:focus': {
+        width: '20ch',
+      },
     },
   },
 }));
 
-function HideOnScroll(props) {
-    const { children, window } = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
-    const trigger = useScrollTrigger({ target: window ? window() : undefined });
-  
-    return (
-      <Slide appear={false} direction="down" in={!trigger}>
-        {children}
-      </Slide>
-    );
-  }
-  
-
-export default function Header() {
-  const classes = useStyles();
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
+export default function Navbar({ session }) {
   const history = useHistory();
+  const classes = useStyles();
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
+  const[query, setQuery] = React.useState('');
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+
   };
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
+
+  const handleDrawerClose = () => {
+    setOpen(false);
   };
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit" onClick={() => history.push('/React-IMDB/movies')}>
-            <Theaters />
-        </IconButton>
-        <p>Movies</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit" onClick={() => history.push('/React-IMDB/shows')}>
-            <Tv />
-        </IconButton>
-        <p>Shows</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit" onClick={() => history.push('/React-IMDB/people')}>
-            <PeopleAlt />
-        </IconButton>
-        <p>People</p>
-      </MenuItem>
-    </Menu>
-  );
-
+  const handleSearch = (e) => {
+    e.preventDefault();
+    e.persist();
+    history.push({
+      pathname: '/search',
+      query: query,
+    });
+  }
 
   return (
-    <div className={classes.grow}>
+    <div className={classes.root}>
       <CssBaseline />
-      <HideOnScroll>
-      <AppBar position="fixed">
+      <AppBar
+        position="fixed"
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open,
+        })}
+      >
         <Toolbar>
           <IconButton
-            edge="start"
-            className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
-            onClick={() => history.push('/React-IMDB')}
+            onClick={handleDrawerOpen}
+            edge="start"
+            className={clsx(classes.menuButton, open && classes.hide)}
           >
-            <Home  />
+            <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            E-TV
+          <Typography variant="h6" noWrap className={classes.title}>
+            eTV
           </Typography>
-         
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="Movies" color="inherit"  onClick={() => history.push('/React-IMDB/movies')}>
-                <Theaters/>
-            </IconButton>
-            <IconButton aria-label="Shows" color="inherit" onClick={() => history.push('/React-IMDB/shows')}>
-                <Tv />
-            </IconButton>
-            <IconButton aria-label="People" color="inherit" onClick={() => history.push('/React-IMDB/people')}>
-                <PeopleAlt />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
+          <Paper component='form' className={classes.search} onSubmit={(e) => handleSearch(e)}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+              onChange={(event) => setQuery(event.target.value)}
+            />
+          </Paper>
         </Toolbar>
       </AppBar>
-      </HideOnScroll>
-      {renderMobileMenu}
+      <Drawer
+        className={classes.drawer}
+        variant="persistent"
+        anchor="left"
+        open={open}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
+        <div className={classes.drawerHeader}>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === "ltr" ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          <ListItem button  onClick={() => {history.push('/'); setOpen(false)}}>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Home"} />
+          </ListItem>
+          <ListItem button  onClick={() => {
+            history.push('/search'); 
+            setOpen(false)
+          }}>
+            <ListItemIcon>
+              <SearchIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Search"} />
+          </ListItem>
+          {
+            session && session.getCurrentUser && (
+              <>
+                <ListItem button>
+                  <ListItemIcon>
+                    <FavoriteIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Favorites"} />
+                </ListItem>
+                <ListItem button>
+                  <ListItemIcon>
+                    <ListIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"My Receipes"} />
+                </ListItem>
+                <ListItem button onClick={() => {history.push('/new'); setOpen(false)}}>
+                  <ListItemIcon>
+                    <AddIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Add a New Receipe"} />
+                </ListItem>
+              </>
+            )
+          }
+        </List>
+        <Divider />
+        { 
+          session && session.getCurrentUser ? (
+            <List>
+            <ListItem button  onClick={() => {history.push('/profile'); setOpen(false)}}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary={"My Account"} />
+            </ListItem>
+            
+          </List>
+          ) : (
+            <List>
+            <ListItem button onClick={() => {history.push('/React-IMDB/login'); setOpen(false)}}>
+              <ListItemIcon>
+                <AccountCircleIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Login"} />
+            </ListItem>
+            <ListItem button onClick={() => {history.push('/React-IMDB/register'); setOpen(false)}}>
+              <ListItemIcon>
+                <AccountBoxIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Register"} />
+            </ListItem>
+          </List>
+          )
+        }
+      </Drawer>
     </div>
   );
 }
