@@ -13,7 +13,7 @@ const Role = ({ title, character, role, clickable, show, job }) =>  {
         return (
             <StyledRole>
                 {clickable ? (
-                    <Link to={`/React-IMDB/shows/${role.id}`}>
+                    <Link to={`/shows/${role.id}`}>
                         <img 
                         src={role.poster_path
                             ? `${IMAGE_BASE_URL}${POSTER_SIZE}${role.poster_path}` 
@@ -37,7 +37,7 @@ const Role = ({ title, character, role, clickable, show, job }) =>  {
         return (
             <StyledRole>
                 {clickable ? (
-                    <Link to={`/React-IMDB/movies/${role.id}`}>
+                    <Link to={`/movies/${role.id}`}>
                         <img 
                         src={role.poster_path
                             ? `${IMAGE_BASE_URL}${POSTER_SIZE}${role.poster_path}` 
@@ -62,7 +62,7 @@ const Role = ({ title, character, role, clickable, show, job }) =>  {
         return (
             <StyledRole>
                 {clickable ? (
-                    <Link to={`/React-IMDB/movies/${role.id}`}>
+                    <Link to={`/movies/${role.id}`}>
                         <img 
                         src={role.poster_path
                             ? `${IMAGE_BASE_URL}${POSTER_SIZE}${role.poster_path}` 
@@ -87,7 +87,7 @@ const Role = ({ title, character, role, clickable, show, job }) =>  {
         return (
             <StyledRole>
                 {clickable ? (
-                    <Link to={`/React-IMDB/shows/${role.id}`}>
+                    <Link to={`/shows/${role.id}`}>
                         <img 
                         src={role.poster_path
                             ? `${IMAGE_BASE_URL}${POSTER_SIZE}${role.poster_path}` 

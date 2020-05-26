@@ -43,7 +43,7 @@ const MovieInfo = ({ movie }) => {
                 <p
                   key={director.credit_id}
                   onClick={() =>
-                    history.push(`/React-IMDB/people/${director.id}`)
+                    history.push(`/people/${director.id}`)
                   }
                   style={{ cursor: "pointer" }}
                 >
@@ -62,7 +62,7 @@ const MovieInfo = ({ movie }) => {
                   clickable
                   style={{ margin: "5px" }}
                   onClick={() =>
-                    history.push(`/React-IMDB/movies/genre/${genre.name}/${genre.id}`)
+                    history.push(`/movies/genre/${genre.name}/${genre.id}`)
                   }
                 />
               ))}

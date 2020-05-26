@@ -132,7 +132,7 @@ const LoginPage = (props) => {
                 </a>
               </Grid>
               <Grid item>
-                <Link to='/React-IMDB/register' variant="body2">
+                <Link to='/register' variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

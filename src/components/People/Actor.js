@@ -9,7 +9,7 @@ import { StyledActor } from '../styles/StyledActor';
 const Actor = ({ actor, clickable }) =>  (
     <StyledActor>
         {clickable ? (
-            <Link to={`/React-IMDB/people/${actor.id}`}>
+            <Link to={`/people/${actor.id}`}>
                 <img 
                 src={actor.profile_path 
                     ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}` 

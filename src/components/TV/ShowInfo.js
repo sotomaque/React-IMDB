@@ -46,7 +46,7 @@ const ShowInfo = ({ show, season }) => {
                       <p
                         key={creator.credit_id}
                         onClick={() =>
-                          history.push(`/React-IMDB/people/${creator.id}`)
+                          history.push(`/people/${creator.id}`)
                         }
                         style={{ cursor: "pointer" }}
                       >
@@ -72,7 +72,7 @@ const ShowInfo = ({ show, season }) => {
                         style={{ margin: "5px" }}
                         onClick={() =>
                           history.push(
-                            `/React-IMDB/shows/genre/${genre.name}/${genre.id}`
+                            `/shows/genre/${genre.name}/${genre.id}`
                           )
                         }
                       />

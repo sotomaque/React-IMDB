@@ -23,26 +23,25 @@ const App = () => (
     <Router>
         <Header />
         <Switch>
-            <Route exact path='/React-IMDB' component={HomePage} />
-            <Route path='/React-IMDB/register' component={RegistrationPage} />
-            <Route path='/React-IMDB/login' component={LoginPage} />
+            <Route exact path='/' component={HomePage} />
+
+            <Route path='/register' component={RegistrationPage} />
+            <Route path='/login' component={LoginPage} />
 
 
-            <Route exact path='/React-IMDB/movies/:movieId' component={MoviePage} />
-            <Route exact path='/React-IMDB/movies' component={MoviesPage} />
-            <Route exact path='/React-IMDB/movies/genre/:genreName/:genreId' component={GenreMoviesPage} />
+            <Route exact path='/movies/:movieId' component={MoviePage} />
+            <Route exact path='/movies' component={MoviesPage} />
+            <Route exact path='/movies/genre/:genreName/:genreId' component={GenreMoviesPage} />
 
-            <Route exact path='/React-IMDB/shows' component={ShowsPage} />
-            <Route exact path='/React-IMDB/shows/:showId' component={ShowPage} />
-            <Route exact path='/React-IMDB/shows/:showId/season/:seasonNumber' component={ShowSeasonPage} />
-            <Route exact path='/React-IMDB/shows/genre/:genreName/:genreId' component={GenreShowsPage} />
+            <Route exact path='/shows' component={ShowsPage} />
+            <Route exact path='/shows/:showId' component={ShowPage} />
+            <Route exact path='/shows/:showId/season/:seasonNumber' component={ShowSeasonPage} />
+            <Route exact path='/shows/genre/:genreName/:genreId' component={GenreShowsPage} />
 
-            <Route exact path='/React-IMDB/people/:actorId' component={ActorPage} />
-            <Route exact path='/React-IMDB/people' component={ActorsPage} />
-            
-            <Redirect to='/React-IMDB' />
+            <Route exact path='/people/:actorId' component={ActorPage} />
+            <Route exact path='/people' component={ActorsPage} />
 
-            <Route path="/React-IMDB/404" component={NotFoundPage} />            
+            <Route path="/404" component={NotFoundPage} />            
             <Route path="*" component={NotFoundPage} />
  
         </Switch>

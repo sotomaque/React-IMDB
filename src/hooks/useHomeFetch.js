@@ -22,13 +22,13 @@ export const useHomeFetch = searchTerm => {
         const showEndpoint = `${API_URL}tv/popular?api_key=${API_KEY}`;
         const movieResponse = await fetch(movieEndpoint);
         if (movieResponse.status === 404) {
-          history.push('/React-IMDB/404');
+          history.push('/404');
         }
         const movieResult = await movieResponse.json();
 
         const showResponse = await fetch(showEndpoint);
         if (showResponse.status === 404) {
-          history.push('/React-IMDB/404');
+          history.push('/404');
         }
         const showResult = await showResponse.json();
 

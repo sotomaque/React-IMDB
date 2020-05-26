@@ -140,7 +140,7 @@ const RegistrationPage = (props) => {
                 </Button>
                 <Grid container style={{ display: 'flex', justifyContent: 'center'}}>
                 <Grid item>
-                    <Link to='/React-IMDB/login' variant="body2">
+                    <Link to='/login' variant="body2">
                     {"Already have an account? Sign In"}
                     </Link>
                 </Grid>

@@ -9,7 +9,7 @@ const ShowSeasonThumb = ({ image, season, seasonNumber, clickable }) => {
     <StyledGridElement>
       {clickable ? (
         <>
-          <Link to={`/React-IMDB/shows/${showId}/season/${seasonNumber}`}>
+          <Link to={`/shows/${showId}/season/${seasonNumber}`}>
             <img className="clickable" src={image} alt="show-thumb" />
           </Link>
           <span className="text-title">{season.name}</span>

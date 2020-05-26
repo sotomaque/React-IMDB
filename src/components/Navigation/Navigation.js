@@ -23,7 +23,7 @@ const Navigation = ({ title, movie, actor }) => {
     return (
         <StyledNavigation>
             <div className="navigation-content">
-                <Link to='/React-IMDB'>
+                <Link to='/'>
                     <p>Home</p>
                 </Link>
                 <p>|</p>

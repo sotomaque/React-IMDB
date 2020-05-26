@@ -16,7 +16,7 @@ const NotFoundPage = () => {
             <p className="subheading">
               Looks like the page you were looking for is no longer here.
             </p>
-            <Link to='/React-IMDb'>
+            <Link to='/'>
               <p className="link">
                 Go Back Home
               </p>

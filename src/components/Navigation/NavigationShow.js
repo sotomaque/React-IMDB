@@ -20,13 +20,13 @@ const NavigationShow = ({ title, seasonNumber }) => {
     if (!seasonNumber) return (
         <StyledNavigation>
             <div className="navigation-content">
-                <Link to='/React-IMDB'>
+                <Link to='/'>
                     <p>Home</p>
                 </Link>
 
                 <p style={{opacity: '0.6'}}>|</p>
 
-                <Link to='/React-IMDB/shows'>
+                <Link to='/shows'>
                     <p>Shows</p>
                 </Link>
 
@@ -41,19 +41,19 @@ const NavigationShow = ({ title, seasonNumber }) => {
     return (
         <StyledNavigation>
             <div className="navigation-content">
-                <Link to='/React-IMDB'>
+                <Link to='/'>
                     <p>Home</p>
                 </Link>
 
                 <p style={{opacity: '0.6'}}>|</p>
 
-                <Link to='/React-IMDB/shows'>
+                <Link to='/shows'>
                     <p>Shows</p>
                 </Link>
 
                 <p style={{opacity: '0.6'}}>|</p>
 
-                <Link to={`/React-IMDB/shows/${showId}`}>
+                <Link to={`/shows/${showId}`}>
                     <p>{formattedShowName}</p> 
                 </Link>
                 

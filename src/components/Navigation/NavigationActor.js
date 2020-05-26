@@ -19,13 +19,13 @@ const NavigationActor = ({ title }) => {
     return (
         <StyledNavigation>
             <div className="navigation-content">
-                <Link to='/React-IMDB'>
+                <Link to='/'>
                     <p>Home</p>
                 </Link>
 
                 <p style={{opacity: '0.6'}}>|</p>
 
-                <Link to='/React-IMDB/people'>
+                <Link to='/people'>
                     <p>People</p>
                 </Link>
                 

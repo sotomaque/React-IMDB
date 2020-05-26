@@ -251,13 +251,13 @@ export default function Navbar({ session }) {
           </List>
           ) : (
             <List>
-            <ListItem button onClick={() => {history.push('/React-IMDB/login'); setOpen(false)}}>
+            <ListItem button onClick={() => {history.push('/login'); setOpen(false)}}>
               <ListItemIcon>
                 <AccountCircleIcon />
               </ListItemIcon>
               <ListItemText primary={"Login"} />
             </ListItem>
-            <ListItem button onClick={() => {history.push('/React-IMDB/register'); setOpen(false)}}>
+            <ListItem button onClick={() => {history.push('/register'); setOpen(false)}}>
               <ListItemIcon>
                 <AccountBoxIcon />
               </ListItemIcon>
